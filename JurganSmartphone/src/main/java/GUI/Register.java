@@ -4,6 +4,11 @@
  */
 package GUI;
 
+import Classes.Registrasi;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Fanul Nastia
@@ -28,15 +33,15 @@ public class Register extends javax.swing.JFrame {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jPanel1 = new javax.swing.JPanel();
-        passwordField = new javax.swing.JPasswordField();
+        confpasswordField = new javax.swing.JPasswordField();
         emailField = new javax.swing.JTextField();
-        Loginbtn = new javax.swing.JButton();
-        emailLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        passwordLabel1 = new javax.swing.JLabel();
-        passwordField1 = new javax.swing.JPasswordField();
         Registerbtn = new javax.swing.JButton();
+        emailLabel = new javax.swing.JLabel();
+        confpasswordLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
+        backToLoginbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,11 +59,11 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        passwordField.setToolTipText("");
-        passwordField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
+        confpasswordField.setToolTipText("");
+        confpasswordField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        confpasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
+                confpasswordFieldActionPerformed(evt);
             }
         });
 
@@ -69,39 +74,39 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        Loginbtn.setBackground(new java.awt.Color(0, 200, 255));
-        Loginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        Loginbtn.setText("Register");
-        Loginbtn.addActionListener(new java.awt.event.ActionListener() {
+        Registerbtn.setBackground(new java.awt.Color(0, 200, 255));
+        Registerbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Registerbtn.setText("Register");
+        Registerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginbtnActionPerformed(evt);
+                RegisterbtnActionPerformed(evt);
             }
         });
 
         emailLabel.setText("Email");
 
-        passwordLabel.setText("Confirm Password");
+        confpasswordLabel.setText("Confirm Password");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("REGISTRASI");
 
-        passwordLabel1.setText("Password");
+        passwordLabel.setText("Password");
 
-        passwordField1.setToolTipText("");
-        passwordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        passwordField1.addActionListener(new java.awt.event.ActionListener() {
+        passwordField.setToolTipText("");
+        passwordField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordField1ActionPerformed(evt);
+                passwordFieldActionPerformed(evt);
             }
         });
 
-        Registerbtn.setForeground(new java.awt.Color(0, 200, 255));
-        Registerbtn.setText("Kembali ke menu Login");
-        Registerbtn.setBorder(null);
-        Registerbtn.setBorderPainted(false);
-        Registerbtn.addActionListener(new java.awt.event.ActionListener() {
+        backToLoginbtn.setForeground(new java.awt.Color(0, 200, 255));
+        backToLoginbtn.setText("Kembali ke menu Login");
+        backToLoginbtn.setBorder(null);
+        backToLoginbtn.setBorderPainted(false);
+        backToLoginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterbtnActionPerformed(evt);
+                backToLoginbtnActionPerformed(evt);
             }
         });
 
@@ -114,12 +119,12 @@ public class Register extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordLabel1)
                             .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passwordLabel)
+                            .addComponent(confpasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailLabel)
-                            .addComponent(passwordLabel)))
+                            .addComponent(confpasswordLabel)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(jLabel3)))
@@ -128,10 +133,10 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(133, 133, 133)
-                        .addComponent(Loginbtn))
+                        .addComponent(Registerbtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(Registerbtn)))
+                        .addComponent(backToLoginbtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,17 +149,17 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(5, 5, 5)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(confpasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(confpasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(Loginbtn)
-                .addGap(18, 18, 18)
                 .addComponent(Registerbtn)
+                .addGap(18, 18, 18)
+                .addComponent(backToLoginbtn)
                 .addGap(46, 46, 46))
         );
 
@@ -189,33 +194,79 @@ public class Register extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+    private void confpasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confpasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
+    }//GEN-LAST:event_confpasswordFieldActionPerformed
 
     private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldActionPerformed
 
-    private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
-
-    }//GEN-LAST:event_LoginbtnActionPerformed
+    private void RegisterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterbtnActionPerformed
+emailField.setText(emailField.getText().toLowerCase());
+        
+        String email = emailField.getText().trim();
+        String passW = String.valueOf(passwordField.getPassword());
+        String passC = String.valueOf(confpasswordField.getPassword());
+        
+        try {
+            if(email.equals("")){
+                emailLabel.setText("Email tidak boleh kosong.");
+                emailLabel.setForeground(java.awt.Color.red);
+                passwordField.setText("");
+                confpasswordField.setText("");
+            }
+            else if(passW.equals("")){
+               passwordLabel.setText("password tidak boleh kosong.");
+               passwordLabel.setForeground(java.awt.Color.red); 
+               passwordField.setText("");
+               confpasswordField.setText("");
+            }
+            else{
+                validateRegister(new Registrasi(email, passW), passC);
+            }
+        } catch (IOException ex){
+            Logger.getLogger(Registrasi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_RegisterbtnActionPerformed
 
     private void jPanel1AncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel1AncestorResized
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1AncestorResized
 
-    private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordField1ActionPerformed
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void RegisterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterbtnActionPerformed
-        Register Reg = new Register();
-        Reg.setVisible(true);
+    private void backToLoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToLoginbtnActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
 
         dispose();
-    }//GEN-LAST:event_RegisterbtnActionPerformed
+    }//GEN-LAST:event_backToLoginbtnActionPerformed
 
+    public void validateRegister(Registrasi pembeli, String passC) throws IOException{
+        if(pembeli.getPassword().equalsIgnoreCase(passC)){
+            if(pembeli.cekEmailPembeli()){
+                emailLabel.setText("Email sudah pernah digunakan");
+                emailLabel.setForeground(java.awt.Color.red);
+                confpasswordField.setText("");
+                confpasswordField.setText("");
+            }
+            else {
+                InfoPengguna dIP = new InfoPengguna(this, pembeli);
+                dIP.setLocationRelativeTo(null);
+                dIP.setVisible(true);
+            }
+        }
+        else {
+            confpasswordLabel.setText("Password harus sesuai dengan konfirmasi");
+            confpasswordLabel.setForeground(java.awt.Color.red);
+            confpasswordField.setText("");
+            confpasswordField.setText("");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -252,16 +303,16 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Loginbtn;
     private javax.swing.JButton Registerbtn;
+    private javax.swing.JButton backToLoginbtn;
+    private javax.swing.JPasswordField confpasswordField;
+    private javax.swing.JLabel confpasswordLabel;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JPasswordField passwordField;
-    private javax.swing.JPasswordField passwordField1;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JLabel passwordLabel1;
     // End of variables declaration//GEN-END:variables
 }
