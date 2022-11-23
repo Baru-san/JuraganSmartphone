@@ -38,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         emailField = new javax.swing.JTextField();
         Loginbtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Registerbtn = new javax.swing.JButton();
         emailLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -85,13 +85,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setForeground(new java.awt.Color(0, 200, 255));
-        jButton2.setText("Tidak memiliki akun?");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Registerbtn.setForeground(new java.awt.Color(0, 200, 255));
+        Registerbtn.setText("Tidak memiliki akun?");
+        Registerbtn.setBorder(null);
+        Registerbtn.setBorderPainted(false);
+        Registerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                RegisterbtnActionPerformed(evt);
             }
         });
 
@@ -109,15 +109,6 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(Loginbtn))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,6 +119,15 @@ public class Login extends javax.swing.JFrame {
                         .addGap(131, 131, 131)
                         .addComponent(jLabel3)))
                 .addGap(0, 63, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(Loginbtn))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(Registerbtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(Loginbtn)
                 .addGap(35, 35, 35)
-                .addComponent(jButton2)
+                .addComponent(Registerbtn)
                 .addGap(31, 31, 31))
         );
 
@@ -196,13 +196,15 @@ public class Login extends javax.swing.JFrame {
         LoginAction();
     }//GEN-LAST:event_LoginbtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void toTheNextPage(Pembeli pembeli){
+    private void RegisterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterbtnActionPerformed
         Register Reg = new Register();
         Reg.setVisible(true);
+        
+        dispose();
+    }//GEN-LAST:event_RegisterbtnActionPerformed
+
+    private void toTheNextPage(Pembeli pembeli){
+
     }
     
     private void LoginAction() {
@@ -278,9 +280,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Loginbtn;
+    private javax.swing.JButton Registerbtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
