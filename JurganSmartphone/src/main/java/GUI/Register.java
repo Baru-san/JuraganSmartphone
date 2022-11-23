@@ -198,7 +198,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldActionPerformed
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
-        LoginAction();
+
     }//GEN-LAST:event_LoginbtnActionPerformed
 
     private void jPanel1AncestorResized(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel1AncestorResized
