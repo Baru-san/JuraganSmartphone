@@ -21,10 +21,12 @@ public class Home extends javax.swing.JFrame {
      */
     private ExFont Xfont;
     public Home() {
-        initComponents();
+        
             try {
             this.Xfont = new ExFont();
         } catch (IOException | FontFormatException ex){}
+            
+    initComponents();
     }
 
     /**

@@ -204,7 +204,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterbtnActionPerformed
 
     private void toTheNextPage(Pembeli pembeli){
-
+        Home home = new Home();
+        home.setVisible(true);
+        
+        dispose();
     }
     
     private void LoginAction() {
