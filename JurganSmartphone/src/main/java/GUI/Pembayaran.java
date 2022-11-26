@@ -1,7 +1,6 @@
 package GUI;
 
 import Classes.Pembeli;
-//import Databases.Konfigurasi;
 import java.awt.FontFormatException;
 import java.io.IOException;
 import java.util.logging.Level;
