@@ -138,14 +138,11 @@
             </Container>
             <Component class="javax.swing.JLabel" name="panelLBRating">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getAwesome(18)" type="code"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ae" green="d5" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="getStar(buku.getRating())" type="code"/>
+                  <Connection code="getStar(sp.getRating())" type="code"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[400, 25]"/>
@@ -159,11 +156,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="panelLBJudul">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRoboto(24)" type="code"/>
-                </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="String.format(&quot;&lt;html&gt;&lt;div WIDTH=%d&gt;%s&lt;/div&gt;&lt;/html&gt;&quot;, 400, buku.getJudul())" type="code"/>
+                  <Connection code="String.format(&quot;&lt;html&gt;&lt;div WIDTH=%d&gt;%s&lt;/div&gt;&lt;/html&gt;&quot;, 400, sp.getNama())" type="code"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="3"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -181,11 +175,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="panelLBPenulis">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRoboto(14)" type="code"/>
-                </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;&lt;html&gt;&quot; + buku.getPenulis() + &quot;&lt;/html&gt;&quot;" type="code"/>
+                  <Connection code="&quot;&lt;html&gt;&quot; + sp.getMerek() + &quot;&lt;/html&gt;&quot;" type="code"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[400, 25]"/>
@@ -199,14 +190,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="panelLBKategori">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRoboto(12)" type="code"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="80" green="80" red="80" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="buku.getKategori()" type="code"/>
                 </Property>
                 <Property name="verticalAlignment" type="int" value="1"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -221,11 +206,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="panelLBHarga">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRoboto(24)" type="code"/>
-                </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Rp. &quot; + String.format(&quot;%,d&quot;, (int) buku.getHarga()).replace(&apos;,&apos;, &apos;.&apos;)" type="code"/>
+                  <Connection code="&quot;Rp. &quot; + sp.getHarga()" type="code"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -781,9 +763,6 @@
                       <Color blue="e0" green="fa" red="fe" type="rgb"/>
                     </Property>
                     <Property name="columns" type="int" value="20"/>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="konfigurasi.getRoboto(12)" type="code"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="No Review"/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -839,9 +818,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="73" green="a3" red="d4" type="rgb"/>
                 </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRobotoBold(14)" type="code"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Masukkan Keranjang"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[175, 50]"/>
@@ -861,9 +837,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="73" green="a3" red="d4" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="konfigurasi.getRobotoBold(14)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Kembali"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

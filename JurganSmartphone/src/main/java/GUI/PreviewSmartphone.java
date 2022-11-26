@@ -1,7 +1,8 @@
 package GUI;
 
 import Classes.Smartphone;
-import Databases.Fonts.ExFont;
+import Classes.Pembeli;
+//import Database.Konfigurasi;
 import java.awt.FontFormatException;
 import java.awt.Image;
 import java.io.File;
@@ -13,16 +14,17 @@ import javax.swing.ImageIcon;
 
 public class PreviewSmartphone extends javax.swing.JDialog {
 
-    public PreviewSmartphone(java.awt.Frame parent, Smartphone smartphone) {
+    public PreviewSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
         this.parent = parent;
-        this.smartphone = smartphone;
+        this.sp = sp;
+        this.pembeli = pembeli;
 
         try {
-//            this.konfigurasi = new Konfigurasi();
-            this.cover = ImageIO.read(new File("src/main/java/Databases/" + smartphone.getGambar()))
+            //this.konfigurasi = new Konfigurasi();
+            this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
                     .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
-        } catch (IOException ex) {
-            Logger.getLogger(PreviewSmartphone.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException e) {
+            Logger.getLogger(PreviewSmartphone.class.getName()).log(Level.SEVERE, null, e);
         }
 
         initComponents();
@@ -107,9 +109,8 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         gridBagConstraints.gridheight = 7;
         panelLBBody1.add(panelLBCover, gridBagConstraints);
 
-        panelLBRating.setFont(konfigurasi.getAwesome(18));
         panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
-        panelLBRating.setText(getStar(buku.getRating()));
+        panelLBRating.setText(getStar(sp.getRating()));
         panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -117,8 +118,7 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBRating, gridBagConstraints);
 
-        panelLBJudul.setFont(konfigurasi.getRoboto(24));
-        panelLBJudul.setText(String.format("<html><div WIDTH=%d>%s</div></html>", 400, buku.getJudul()));
+        panelLBJudul.setText(String.format("<html><div WIDTH=%d>%s</div></html>", 400, sp.getNama()));
         panelLBJudul.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         panelLBJudul.setMaximumSize(new java.awt.Dimension(400, 90));
         panelLBJudul.setMinimumSize(new java.awt.Dimension(400, 30));
@@ -130,8 +130,7 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBJudul, gridBagConstraints);
 
-        panelLBPenulis.setFont(konfigurasi.getRoboto(14));
-        panelLBPenulis.setText("<html>" + buku.getPenulis() + "</html>");
+        panelLBPenulis.setText("<html>" + sp.getMerek() + "</html>");
         panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -139,9 +138,7 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBPenulis, gridBagConstraints);
 
-        panelLBKategori.setFont(konfigurasi.getRoboto(12));
         panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
-        panelLBKategori.setText(buku.getKategori());
         panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelLBKategori.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -150,8 +147,7 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
         panelLBBody1.add(panelLBKategori, gridBagConstraints);
 
-        panelLBHarga.setFont(konfigurasi.getRoboto(24));
-        panelLBHarga.setText("Rp. " + String.format("%,d", (int) buku.getHarga()).replace(',', '.'));
+        panelLBHarga.setText("Rp. " + sp.getHarga());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
@@ -173,7 +169,6 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         textAreaLBReview.setEditable(false);
         textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
         textAreaLBReview.setColumns(20);
-        textAreaLBReview.setFont(konfigurasi.getRoboto(12));
         textAreaLBReview.setText("No Review");
         textAreaLBReview.setWrapStyleWord(true);
         textAreaLBReview.setBorder(null);
@@ -190,7 +185,6 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
         buttonLBKeranjang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKeranjang.setFont(konfigurasi.getRobotoBold(14));
         buttonLBKeranjang.setText("Masukkan Keranjang");
         buttonLBKeranjang.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonLBKeranjang.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -202,7 +196,6 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         });
 
         buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKembali.setFont(konfigurasi.getRobotoBold(14));
         buttonLBKembali.setText("Kembali");
         buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonLBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -245,9 +238,9 @@ public class PreviewSmartphone extends javax.swing.JDialog {
 //        if (pembeli.getNama().equals("Guest")) {
 //            dispose();
 //
-////            GuestAlert dSI = new GuestAlert(parent);
-////            dSI.setLocationRelativeTo(null);
-////            dSI.setVisible(true);
+//            GuestAlert dSI = new GuestAlert(parent);
+//            dSI.setLocationRelativeTo(null);
+//            dSI.setVisible(true);
 //        } else {
 //            dispose();
 //
@@ -273,10 +266,11 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         return stars;
     }
 
-    private final Smartphone smartphone;
+    private final Smartphone sp;
+    private final Pembeli pembeli;
     private final java.awt.Frame parent;
     private Image cover;
-    private ExFont Xfont;
+    //private Konfigurasi konfigurasi;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
