@@ -398,7 +398,7 @@ public class PilihanBuku extends javax.swing.JFrame {
 
             panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    //panelLBLoopMouseClicked(evt);
+                    panelLBLoopMouseClicked(evt);
                 }
             });
 
@@ -420,14 +420,14 @@ public class PilihanBuku extends javax.swing.JFrame {
         return stars;
     }
 
-//    private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
-//        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
-//        int num = Integer.parseInt(panel.getName());
-//
-//        LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
-//        dLB.setLocationRelativeTo(null);
-//        dLB.setVisible(true);
-//    }
+    private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
+        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
+        int num = Integer.parseInt(panel.getName());
+
+        LihatSmartphone dLB = new LihatSmartphone(this, sp[num], pembeli);
+        dLB.setLocationRelativeTo(null);
+        dLB.setVisible(true);
+    }
 
 //    private void panelFBLoopMouseClicked(java.awt.event.MouseEvent evt) {
 //        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
