@@ -4,14 +4,18 @@ import Classes.Smartphone;
 import Classes.Pembeli;
 import Databases.Database;
 import Databases.Fonts.ExFont;
+import java.awt.Color;
 import java.awt.FontFormatException;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import javax.imageio.ImageIO;
-//import java.io.File;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.PopupFactory;
+import javax.swing.UIManager;
 
 public class Home extends javax.swing.JFrame implements ActionListener {
 
@@ -244,7 +248,6 @@ public class Home extends javax.swing.JFrame implements ActionListener {
             fillerLSLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 32767));
             labelLSLoop1[i] = new javax.swing.JLabel();
             fillerLSLoop[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-            //labelLBLoop2[i] = new javax.swing.JLabel();
             fillerLSLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250,0), new java.awt.Dimension(250, 32767));
             buybtnLoop[i] = new javax.swing.JButton();
 
@@ -254,7 +257,6 @@ public class Home extends javax.swing.JFrame implements ActionListener {
             panelLSLoop[i].setLayout(new javax.swing.BoxLayout(panelLSLoop[i], javax.swing.BoxLayout.LINE_AXIS));
             panelLSLoop[i].add(fillerLSLoopPre[i]);
 
-            //labelLBLoop1[i].setFont(konfigurasi.getRoboto(14));
             labelLSLoop1[i].setText(sp[i].getNama() + " by " + sp[i].getMerek());
             labelLSLoop1[i].setFont(Xfont.getBaxoe(15));
             labelLSLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
@@ -299,10 +301,15 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         javax.swing.JButton button = (javax.swing.JButton) e.getSource();
         int num = Integer.parseInt(button.getName());
         
-        PreviewSmartphone dLB = new PreviewSmartphone(this, sp[num], pembeli);
-        dLB.beli();
+        PreviewSmartphone dPS = new PreviewSmartphone(this, sp[num], pembeli);
+        dPS.beli();
+        
+        PopUpBeli popbeli = new PopUpBeli();
+        popbeli.setLocationRelativeTo(null);
+        popbeli.setVisible(true);
     }
 
+    
     // Variables for Looping Listed Books
     private javax.swing.JPanel[] panelLSLoop;
     private javax.swing.Box.Filler[] fillerLSLoop;
