@@ -1,4 +1,5 @@
 # JuraganSmartphone
+Projek mengenai pembelian barang elektronik yang dilakukan secara online.
 
 # Anggota Kelompok
 
@@ -10,7 +11,7 @@
 
 
 # Penjelasan Projek
-Pada projek ini kami membuat projek tentang pembelian barang elektronik secara online berbasis Java GUI. Program kami memiliki 5 tampilan, yang terdiri dari Register, Login, pertaturan, data nasabah, dan yang terakhir adalah Home. Untuk tambahan, kami membuat 1 file yang berfungsi menyimpan data pembeli yang telah diisi oleh user seperti saldo. 
+Pada projek ini kami membuat projek tentang pembelian barang elektronik secara online berbasis Java GUI. Program kami memiliki 5 tampilan, yang terdiri dari Register, Login, pertaturan, data pembeli, dan yang terakhir adalah Home. Untuk tambahan, kami membuat 1 file yang berfungsi menyimpan data pembeli yang telah diisi oleh user seperti saldo. 
 
 1. Untuk tampilan awal, user akan diarahkan pada laman register untuk melakukan registrasi terlebih dahulu. Pada register, terdapat username dan password yang harus diisi oleh user, untuk memastikan password yang telah dibuat oleh user, kami menggunakan retype password, jdi jika user mengisi password yang berbeda, maka akan muncul perintah warning. Masing2 inputan akan disimpan dalam sebuah variabel baru.
 2. Jika berhasil, user akan diarahkan menuju laman peraturan, untuk itu user diminta untuk membaca peraturannya terlebih dahulu. Dengan menekan oke user akan dialihkan menuju data nasabah. 
