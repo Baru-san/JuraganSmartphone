@@ -29,7 +29,7 @@ public class Smartphone {
             this.merek = Data[2];
             this.harga = Data[3];
             this.rating = Data[4];
-            //this.gambar = Data[5];
+            this.gambar = Data[5];
         } catch(Exception e){
         }
     }
@@ -46,8 +46,8 @@ public class Smartphone {
         return this.merek;
     }
 
-    public String getHarga(){
-        return harga;
+    public double getHarga(){
+        return Double.parseDouble(this.harga);
     }   
 
     public double getRating(){

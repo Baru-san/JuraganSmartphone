@@ -1,20 +1,20 @@
-an001,ROG 3,Asus,5.000.000,4.5,Image/ROG-3-image.jpg
-an002,Iphone 11,Apple,11.000.000,4.0,Image/iphone 11.jpg
-an003,Galaxy A13,Samsung,15.000.000,4.2,Image/galaxy 13.jpg
-an004,Galaxy Z Fold 4,Samsung,24.000.000,4.6,Image/fold4.jpg
-an005,GT Neo3,Realme,5.600.000,4.3,Image/gt neo3.jpg
-an006,Redmi Note 10,Xiaomi,5.600.000,4.3,Image/redmi note 10.jpg
-an007,Zero 8,Infinix,3.400.000,3.8,Image/infinix zero 9.jpg
-an008,Y7 Pro, Huawei,2.500.000,4.4,Image/y7 pro.jpg
-an009,Galaxy M20,Samsung,950.000,4.5,Image/galaxy m20.jpg
-an010,Iphone 13 Pro Max,Apple,18.000.000,5.0,Image/Iphone 13 Pro Max.jpg
-an011,Iphone 12 Pro Max,Apple,17.000.000,5.0,Image/iphone 12.jpg
-an012,Galaxy S22 Ultra,Samsung,17.000.000,4.8,Image/galaxy 22.jpg
-an013,Galaxy S21 Ultra,Samsung,14.000.000,4.7,Image/galaxy21.jpg
-an014,Galaxy S20 FE,Samsung,6.000.000,4.9,Image/galaxy 20FE.jpg
-an015,Galaxy Z Flip 3,Samsung,14.000.000,4.8,Image/galaxyflip3.jpg
-an016,ROG 5s Pro,Asus,18.000.000,4.9,Image/rog 5s pro.jpg
-an007,Pixel 6 Pro,Google,12.000.000,4.8,Image/pixel6pro.jpg
-an018,Find X3 Pro,Oppo,15.000.000,4.6,Image/findx3pro.jpg
-an019,X60,Vivo,7.000.000,3.6,Image/x60.jpg
-an020,11T Pro,Xiaomi,4.000.000,3.3,Image/11tpro.jpg
+an001,ROG 3,Asus,5000000,4.5,Image/ROG-3-image.jpg
+an002,Iphone 11,Apple,11000000,4.0,Image/iphone 11.jpg
+an003,Galaxy A13,Samsung,15000000,4.2,Image/galaxy 13.jpg
+an004,Galaxy Z Fold 4,Samsung,24000000,4.6,Image/fold4.jpg
+an005,GT Neo3,Realme,5600000,4.3,Image/gt neo3.jpg
+an006,Redmi Note 10,Xiaomi,5600000,4.3,Image/redmi note 10.jpg
+an007,Zero 8,Infinix,3400000,3.8,Image/infinix zero 9.jpg
+an008,Y7 Pro, Huawei,2500000,4.4,Image/y7 pro.jpg
+an009,Galaxy M20,Samsung,950000,4.5,Image/galaxy m20.jpg
+an010,Iphone 13 Pro Max,Apple,18000000,5.0,Image/Iphone 13 Pro Max.jpg
+an011,Iphone 12 Pro Max,Apple,17000000,5.0,Image/iphone 12.jpg
+an012,Galaxy S22 Ultra,Samsung,17000000,4.8,Image/galaxy 22.jpg
+an013,Galaxy S21 Ultra,Samsung,14000000,4.7,Image/galaxy21.jpg
+an014,Galaxy S20 FE,Samsung,6000000,4.9,Image/galaxy 20FE.jpg
+an015,Galaxy Z Flip 3,Samsung,14000000,4.8,Image/galaxyflip3.jpg
+an016,ROG 5s Pro,Asus,18000000,4.9,Image/rog 5s pro.jpg
+an007,Pixel 6 Pro,Google,12000000,4.8,Image/pixel6pro.jpg
+an018,Find X3 Pro,Oppo,15000000,4.6,Image/findx3pro.jpg
+an019,X60,Vivo,7000000,3.6,Image/x60.jpg
+an020,11T Pro,Xiaomi,4000000,3.3,Image/11tpro.jpg

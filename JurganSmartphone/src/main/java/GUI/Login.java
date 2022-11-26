@@ -209,7 +209,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterbtnActionPerformed
 
     private void toTheNextPage(Pembeli pembeli) throws FontFormatException{
-        Home pb = new Home();
+        Home pb = new Home(pembeli);
         pb.setVisible(true);
         
         dispose();
