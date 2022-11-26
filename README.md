@@ -6,7 +6,7 @@
 		     2. Ridho Ferdiansyah     (2108107010039)
 		     3. Fanul Nastia          (2108107010029)  
 		     4. Arrijalul Khairi      (21081070100)
-         5. Rahmi Susanti         (2008107010092)
+		     5. Rahmi Susanti         (2008107010092)
 
 
 # Penjelasan Projek
