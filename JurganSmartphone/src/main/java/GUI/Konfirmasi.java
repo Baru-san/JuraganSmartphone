@@ -2,8 +2,9 @@ package GUI;
 
 import Classes.Pembeli;
 import Databases.Database;
-//import Databases.Konfigurasi;
+import Databases.KonfFont;
 import java.awt.FontFormatException;
+//import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -17,12 +18,12 @@ public class Konfirmasi extends javax.swing.JFrame {
         this.pembeli = pembeli;
         this.totalHarga = 0;
 
-//        try {
-//            this.konfigurasi = new Konfigurasi();
-//        } catch (IOException | FontFormatException ex) {
-//            Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
+        try {
+            this.konf = new KonfFont();
+        } catch (IOException | FontFormatException ex) {
+            Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
 
         if (pembeli.getJumlahSmartphone() == 0) {
@@ -45,7 +46,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         fillerMidHeader = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         labelEmail = new javax.swing.JLabel();
         fillerMid2Header = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
-        labelUserProfile = new javax.swing.JLabel();
+        labelLogout = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
         scrollBackground = new javax.swing.JScrollPane();
@@ -60,7 +61,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         fillerPosFooter = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("YukBayarYuk - Keranjang Belanja");
+        setTitle("Juragan Smartphone - Pembayaran");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
@@ -71,7 +72,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelHeader.setLayout(new javax.swing.BoxLayout(panelHeader, javax.swing.BoxLayout.LINE_AXIS));
         panelHeader.add(fillerPreHeader);
 
-        labelTitle.setText("YukBayarYuk");
+        labelTitle.setText("Pembayaran");
         panelHeader.add(labelTitle);
         panelHeader.add(fillerMidHeader);
 
@@ -81,24 +82,24 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelHeader.add(labelEmail);
         panelHeader.add(fillerMid2Header);
 
-        labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
-        labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelUserProfile.setText("\uf007");
-        labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelLogout.setForeground(new java.awt.Color(255, 255, 255));
+        labelLogout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLogout.setText("Log out");
+        labelLogout.setMaximumSize(new java.awt.Dimension(50, 100));
+        labelLogout.setMinimumSize(new java.awt.Dimension(50, 100));
+        labelLogout.setPreferredSize(new java.awt.Dimension(50, 100));
+        labelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseClicked(evt);
+                labelLogoutMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseEntered(evt);
+                labelLogoutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseExited(evt);
+                labelLogoutMouseExited(evt);
             }
         });
-        panelHeader.add(labelUserProfile);
+        panelHeader.add(labelLogout);
         panelHeader.add(fillerPosHeader);
 
         getContentPane().add(panelHeader);
@@ -113,7 +114,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelBackground.setBackground(new java.awt.Color(254, 250, 224));
         panelBackground.setLayout(new javax.swing.BoxLayout(panelBackground, javax.swing.BoxLayout.PAGE_AXIS));
 
-        listBuku();
+        listSP();
 
         scrollBackground.setViewportView(panelBackground);
 
@@ -177,19 +178,19 @@ public class Konfirmasi extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_buttonKembaliActionPerformed
 
-    private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
-        InfoPengguna IP = new InfoPengguna(this, pembeli);
-        IP.setLocationRelativeTo(null);
-        IP.setVisible(true);
-    }//GEN-LAST:event_labelUserProfileMouseClicked
+    private void labelLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoutMouseClicked
+        Login log = new Login();
+        log.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_labelLogoutMouseClicked
 
-    private void labelUserProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseEntered
-        labelUserProfile.setForeground(new java.awt.Color(233, 237, 201));
-    }//GEN-LAST:event_labelUserProfileMouseEntered
+    private void labelLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoutMouseEntered
+        labelLogout.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_labelLogoutMouseEntered
 
-    private void labelUserProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseExited
-        labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
-    }//GEN-LAST:event_labelUserProfileMouseExited
+    private void labelLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoutMouseExited
+        labelLogout.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_labelLogoutMouseExited
 
     private void buttonKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonfirmasiActionPerformed
         Pembayaran PB = new Pembayaran(pembeli);
@@ -214,18 +215,18 @@ public class Konfirmasi extends javax.swing.JFrame {
             }
         });
 
-        int size = panelBuku.length;
+        int size = panelSP.length;
 
         for (int i = size - 1; i >= 0; i--) {
-            pembeli.removeSmartphone(kodeBuku[i]);
+            pembeli.removeSmartphone(kodeSP[i]);
         }
 
-        for (int i = 0; i < panelBuku.length; i++) {
-            panelBukuHarga[i].remove(labelBukuBuang[i]);
-            labelBukuHarga[i].setText("Lunas");
+        for (int i = 0; i < panelSP.length; i++) {
+            panelSPHarga[i].remove(labelSPBuang[i]);
+            labelSPHarga[i].setText("Lunas");
 
-            panelBukuHarga[i].revalidate();
-            panelBukuHarga[i].repaint();
+            panelSPHarga[i].revalidate();
+            panelSPHarga[i].repaint();
         }
 
         labelTotal.setText(labelTotal.getText() + " (Lunas)");
@@ -234,28 +235,28 @@ public class Konfirmasi extends javax.swing.JFrame {
         buttonKonfirmasi.setText("Lunas");
     }
 
-    private void listBuku() {
+    private void listSP() {
         int i = 0;
         int size = pembeli.getJumlahSmartphone();
 
-        panelBuku = new javax.swing.JPanel[size];
-        panelBukuCover = new javax.swing.JPanel[size];
-        panelBukuDeskripsi = new javax.swing.JPanel[size];
-        panelBukuJudul = new javax.swing.JPanel[size];
-        panelBukuHarga = new javax.swing.JPanel[size];
-        labelBukuCover = new javax.swing.JLabel[size];
-        labelBukuJudul = new javax.swing.JLabel[size];
-        labelBukuRating = new javax.swing.JLabel[size];
-        labelBukuHarga = new javax.swing.JLabel[size];
-        labelBukuBuang = new javax.swing.JLabel[size];
-        fillerBukuPre = new javax.swing.Box.Filler[size];
-        fillerBukuMid = new javax.swing.Box.Filler[size];
-        fillerBukuPos = new javax.swing.Box.Filler[size];
-        fillerBukuJudul = new javax.swing.Box.Filler[size];
-        fillerBukuHarga = new javax.swing.Box.Filler[size];
+        panelSP = new javax.swing.JPanel[size];
+        panelSPImg = new javax.swing.JPanel[size];
+        panelSPDeskripsi = new javax.swing.JPanel[size];
+        panelSPNama = new javax.swing.JPanel[size];
+        panelSPHarga = new javax.swing.JPanel[size];
+        labelSPImg = new javax.swing.JLabel[size];
+        labelSPNama = new javax.swing.JLabel[size];
+        labelSPRating = new javax.swing.JLabel[size];
+        labelSPHarga = new javax.swing.JLabel[size];
+        labelSPBuang = new javax.swing.JLabel[size];
+        fillerSPPre = new javax.swing.Box.Filler[size];
+        fillerSPMid = new javax.swing.Box.Filler[size];
+        fillerSPPos = new javax.swing.Box.Filler[size];
+        fillerSPNama = new javax.swing.Box.Filler[size];
+        fillerSPHarga = new javax.swing.Box.Filler[size];
         separatorDeskripsi = new javax.swing.JSeparator[size];
         imageCover = new java.awt.Image[size];
-        kodeBuku = new String[size];
+        kodeSP = new String[size];
 
         for (String kode : pembeli.getKeySmartphone()) {
             try {
@@ -270,118 +271,115 @@ public class Konfirmasi extends javax.swing.JFrame {
         i = 0;
 
         for (String kode : pembeli.getKeySmartphone()) {
-            panelBuku[i] = new javax.swing.JPanel();
-            fillerBukuPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-            panelBukuCover[i] = new javax.swing.JPanel();
-            labelBukuCover[i] = new javax.swing.JLabel();
-            fillerBukuMid[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-            panelBukuDeskripsi[i] = new javax.swing.JPanel();
-            panelBukuJudul[i] = new javax.swing.JPanel();
-            labelBukuJudul[i] = new javax.swing.JLabel();
-            fillerBukuJudul[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-            labelBukuRating[i] = new javax.swing.JLabel();
+            panelSP[i] = new javax.swing.JPanel();
+            fillerSPPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+            panelSPImg[i] = new javax.swing.JPanel();
+            labelSPImg[i] = new javax.swing.JLabel();
+            fillerSPMid[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+            panelSPDeskripsi[i] = new javax.swing.JPanel();
+            panelSPNama[i] = new javax.swing.JPanel();
+            labelSPNama[i] = new javax.swing.JLabel();
+            fillerSPNama[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+            labelSPRating[i] = new javax.swing.JLabel();
             separatorDeskripsi[i] = new javax.swing.JSeparator();
-            panelBukuHarga[i] = new javax.swing.JPanel();
-            labelBukuHarga[i] = new javax.swing.JLabel();
-            fillerBukuHarga[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-            labelBukuBuang[i] = new javax.swing.JLabel();
-            fillerBukuPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+            panelSPHarga[i] = new javax.swing.JPanel();
+            labelSPHarga[i] = new javax.swing.JLabel();
+            fillerSPHarga[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+            labelSPBuang[i] = new javax.swing.JLabel();
+            fillerSPPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
-            panelBuku[i].setBackground(new java.awt.Color(254, 250, 224));
-            panelBuku[i].setMaximumSize(new java.awt.Dimension(32767, 100));
-            panelBuku[i].setMinimumSize(new java.awt.Dimension(0, 100));
-            panelBuku[i].setPreferredSize(new java.awt.Dimension(800, 100));
-            panelBuku[i].setLayout(new javax.swing.BoxLayout(panelBuku[i], javax.swing.BoxLayout.LINE_AXIS));
-            panelBuku[i].add(fillerBukuPre[i]);
+            panelSP[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSP[i].setMaximumSize(new java.awt.Dimension(32767, 100));
+            panelSP[i].setMinimumSize(new java.awt.Dimension(0, 100));
+            panelSP[i].setPreferredSize(new java.awt.Dimension(800, 100));
+            panelSP[i].setLayout(new javax.swing.BoxLayout(panelSP[i], javax.swing.BoxLayout.LINE_AXIS));
+            panelSP[i].add(fillerSPPre[i]);
 
-            panelBukuCover[i].setMaximumSize(new java.awt.Dimension(60, 90));
-            panelBukuCover[i].setMinimumSize(new java.awt.Dimension(60, 90));
-            panelBukuCover[i].setPreferredSize(new java.awt.Dimension(60, 90));
-            panelBukuCover[i].setLayout(new java.awt.BorderLayout());
+            panelSPImg[i].setMaximumSize(new java.awt.Dimension(60, 90));
+            panelSPImg[i].setMinimumSize(new java.awt.Dimension(60, 90));
+            panelSPImg[i].setPreferredSize(new java.awt.Dimension(60, 90));
+            panelSPImg[i].setLayout(new java.awt.BorderLayout());
 
-            labelBukuCover[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            labelBukuCover[i].setIcon(new javax.swing.ImageIcon(imageCover[i]));
-            labelBukuCover[i].setMaximumSize(new java.awt.Dimension(60, 90));
-            labelBukuCover[i].setMinimumSize(new java.awt.Dimension(60, 90));
-            labelBukuCover[i].setPreferredSize(new java.awt.Dimension(60, 90));
-            panelBukuCover[i].add(labelBukuCover[i], java.awt.BorderLayout.CENTER);
+            labelSPImg[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            labelSPImg[i].setIcon(new javax.swing.ImageIcon(imageCover[i]));
+            labelSPImg[i].setMaximumSize(new java.awt.Dimension(60, 90));
+            labelSPImg[i].setMinimumSize(new java.awt.Dimension(60, 90));
+            labelSPImg[i].setPreferredSize(new java.awt.Dimension(60, 90));
+            panelSPImg[i].add(labelSPImg[i], java.awt.BorderLayout.CENTER);
 
-            panelBuku[i].add(panelBukuCover[i]);
-            panelBuku[i].add(fillerBukuMid[i]);
+            panelSP[i].add(panelSPImg[i]);
+            panelSP[i].add(fillerSPMid[i]);
 
-            panelBukuDeskripsi[i].setLayout(new javax.swing.BoxLayout(panelBukuDeskripsi[i], javax.swing.BoxLayout.PAGE_AXIS));
+            panelSPDeskripsi[i].setLayout(new javax.swing.BoxLayout(panelSPDeskripsi[i], javax.swing.BoxLayout.PAGE_AXIS));
 
-            panelBukuJudul[i].setBackground(new java.awt.Color(254, 250, 224));
-            panelBukuJudul[i].setLayout(new javax.swing.BoxLayout(panelBukuJudul[i], javax.swing.BoxLayout.LINE_AXIS));
+            panelSPNama[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSPNama[i].setLayout(new javax.swing.BoxLayout(panelSPNama[i], javax.swing.BoxLayout.LINE_AXIS));
 
-            //labelBukuJudul[i].setFont(konfigurasi.getRoboto(14));
-            labelBukuJudul[i].setText(pembeli.getSmartphone(kode).getNama() + " by " + pembeli.getSmartphone(kode).getMerek());
-            labelBukuJudul[i].setMinimumSize(new java.awt.Dimension(0, 0));
-            panelBukuJudul[i].add(labelBukuJudul[i]);
-            panelBukuJudul[i].add(fillerBukuJudul[i]);
+            labelSPNama[i].setText(pembeli.getSmartphone(kode).getNama() + " by " + pembeli.getSmartphone(kode).getMerek());
+            labelSPNama[i].setMinimumSize(new java.awt.Dimension(0, 0));
+            panelSPNama[i].add(labelSPNama[i]);
+            panelSPNama[i].add(fillerSPNama[i]);
 
-            //labelBukuRating[i].setFont(konfigurasi.getAwesome(18));
-            labelBukuRating[i].setForeground(new java.awt.Color(204, 213, 174));
-            labelBukuRating[i].setText(getStar(pembeli.getSmartphone(kode).getRating()));
-            labelBukuRating[i].setMaximumSize(new java.awt.Dimension(105, 25));
-            labelBukuRating[i].setMinimumSize(new java.awt.Dimension(105, 25));
-            panelBukuJudul[i].add(labelBukuRating[i]);
+            labelSPRating[i].setFont(konf.getAwesome(18));
+            labelSPRating[i].setForeground(new java.awt.Color(255, 255, 0));
+            labelSPRating[i].setText(getStar(pembeli.getSmartphone(kode).getRating()));
+            labelSPRating[i].setMaximumSize(new java.awt.Dimension(105, 25));
+            labelSPRating[i].setMinimumSize(new java.awt.Dimension(105, 25));
+            panelSPNama[i].add(labelSPRating[i]);
 
-            panelBukuDeskripsi[i].add(panelBukuJudul[i]);
+            panelSPDeskripsi[i].add(panelSPNama[i]);
 
             separatorDeskripsi[i].setForeground(new java.awt.Color(0, 0, 0));
             separatorDeskripsi[i].setMaximumSize(new java.awt.Dimension(32767, 2));
             separatorDeskripsi[i].setMinimumSize(new java.awt.Dimension(0, 2));
-            panelBukuDeskripsi[i].add(separatorDeskripsi[i]);
+            panelSPDeskripsi[i].add(separatorDeskripsi[i]);
 
-            panelBukuHarga[i].setBackground(new java.awt.Color(254, 250, 224));
-            panelBukuHarga[i].setLayout(new javax.swing.BoxLayout(panelBukuHarga[i], javax.swing.BoxLayout.LINE_AXIS));
+            panelSPHarga[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSPHarga[i].setLayout(new javax.swing.BoxLayout(panelSPHarga[i], javax.swing.BoxLayout.LINE_AXIS));
 
-            //labelBukuHarga[i].setFont(konfigurasi.getRoboto(14));
-            labelBukuHarga[i].setText("Rp. " + String.format("%,d", (int) pembeli.getSmartphone(kode).getHarga()).replace(',', '.'));
-            panelBukuHarga[i].add(labelBukuHarga[i]);
-            panelBukuHarga[i].add(fillerBukuHarga[i]);
+            labelSPHarga[i].setText("Rp. " + String.format("%,d", (int) pembeli.getSmartphone(kode).getHarga()).replace(',', '.'));
+            panelSPHarga[i].add(labelSPHarga[i]);
+            panelSPHarga[i].add(fillerSPHarga[i]);
 
-            //labelBukuBuang[i].setFont(konfigurasi.getAwesome(18));
-            labelBukuBuang[i].setForeground(java.awt.Color.gray);
-            labelBukuBuang[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            labelBukuBuang[i].setText("\uf1f8");
-            labelBukuBuang[i].setMaximumSize(new java.awt.Dimension(50, 25));
-            labelBukuBuang[i].setMinimumSize(new java.awt.Dimension(50, 25));
+            labelSPBuang[i].setForeground(java.awt.Color.gray);
+            labelSPBuang[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            labelSPBuang[i].setText("Batalkan");
+            labelSPBuang[i].setMaximumSize(new java.awt.Dimension(50, 25));
+            labelSPBuang[i].setMinimumSize(new java.awt.Dimension(50, 25));
 
-            labelBukuBuang[i].setName("" + i);
+            labelSPBuang[i].setName("" + i);
 
-            labelBukuBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            labelSPBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
                     labelBukuBuangMouseEntered(evt);
                 }
             });
 
-            labelBukuBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            labelSPBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseExited(java.awt.event.MouseEvent evt) {
                     labelBukuBuangMouseExited(evt);
                 }
             });
 
-            labelBukuBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            labelSPBuang[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     labelBukuBuangMouseClicked(evt);
                 }
             });
 
-            panelBukuHarga[i].add(labelBukuBuang[i]);
+            panelSPHarga[i].add(labelSPBuang[i]);
 
-            panelBukuDeskripsi[i].add(panelBukuHarga[i]);
+            panelSPDeskripsi[i].add(panelSPHarga[i]);
 
-            panelBuku[i].add(panelBukuDeskripsi[i]);
-            panelBuku[i].add(fillerBukuPos[i]);
+            panelSP[i].add(panelSPDeskripsi[i]);
+            panelSP[i].add(fillerSPPos[i]);
 
-            panelBackground.add(panelBuku[i]);
+            panelBackground.add(panelSP[i]);
 
-            kodeBuku[i] = kode;
+            kodeSP[i] = kode;
             totalHarga += pembeli.getSmartphone(kode).getHarga();
             i++;
         }
@@ -392,30 +390,30 @@ public class Konfirmasi extends javax.swing.JFrame {
         javax.swing.JLabel label = (javax.swing.JLabel) evt.getSource();
         int num = Integer.parseInt(label.getName());
 
-        labelBukuBuang[num].setForeground(java.awt.Color.black);
+        labelSPBuang[num].setForeground(java.awt.Color.black);
     }
 
     private void labelBukuBuangMouseExited(java.awt.event.MouseEvent evt) {
         javax.swing.JLabel label = (javax.swing.JLabel) evt.getSource();
         int num = Integer.parseInt(label.getName());
 
-        labelBukuBuang[num].setForeground(java.awt.Color.gray);
+        labelSPBuang[num].setForeground(java.awt.Color.gray);
     }
 
     private void labelBukuBuangMouseClicked(java.awt.event.MouseEvent evt) {
         javax.swing.JLabel label = (javax.swing.JLabel) evt.getSource();
         int num = Integer.parseInt(label.getName());
 
-        panelBackground.remove(panelBuku[num]);
+        panelBackground.remove(panelSP[num]);
 
         panelBackground.revalidate();
         panelBackground.repaint();
 
-        totalHarga -= pembeli.getSmartphone(kodeBuku[num]).getHarga();
+        totalHarga -= pembeli.getSmartphone(kodeSP[num]).getHarga();
 
         labelTotal.setText("Total: Rp. " + String.format("%,d", totalHarga).replace(',', '.'));
 
-        pembeli.removeSmartphone(kodeBuku[num]);
+        pembeli.removeSmartphone(kodeSP[num]);
 
         if (pembeli.getJumlahSmartphone() == 0) {
             buttonKonfirmasi.setEnabled(false);
@@ -438,27 +436,27 @@ public class Konfirmasi extends javax.swing.JFrame {
 
     private Pembeli pembeli;
     private int totalHarga;
-    //private Konfigurasi konfigurasi;
+    private KonfFont konf;
 
-    // Varibles for Listed Books
-    private javax.swing.JPanel[] panelBuku;
-    private javax.swing.JPanel[] panelBukuCover;
-    private javax.swing.JPanel[] panelBukuDeskripsi;
-    private javax.swing.JPanel[] panelBukuJudul;
-    private javax.swing.JPanel[] panelBukuHarga;
-    private javax.swing.JLabel[] labelBukuCover;
-    private javax.swing.JLabel[] labelBukuJudul;
-    private javax.swing.JLabel[] labelBukuRating;
-    private javax.swing.JLabel[] labelBukuHarga;
-    private javax.swing.JLabel[] labelBukuBuang;
+    // Varibles for Listed product
+    private javax.swing.JPanel[] panelSP;
+    private javax.swing.JPanel[] panelSPImg;
+    private javax.swing.JPanel[] panelSPDeskripsi;
+    private javax.swing.JPanel[] panelSPNama;
+    private javax.swing.JPanel[] panelSPHarga;
+    private javax.swing.JLabel[] labelSPImg;
+    private javax.swing.JLabel[] labelSPNama;
+    private javax.swing.JLabel[] labelSPRating;
+    private javax.swing.JLabel[] labelSPHarga;
+    private javax.swing.JLabel[] labelSPBuang;
     private javax.swing.JSeparator[] separatorDeskripsi;
-    private javax.swing.Box.Filler[] fillerBukuPre;
-    private javax.swing.Box.Filler[] fillerBukuMid;
-    private javax.swing.Box.Filler[] fillerBukuPos;
-    private javax.swing.Box.Filler[] fillerBukuJudul;
-    private javax.swing.Box.Filler[] fillerBukuHarga;
+    private javax.swing.Box.Filler[] fillerSPPre;
+    private javax.swing.Box.Filler[] fillerSPMid;
+    private javax.swing.Box.Filler[] fillerSPPos;
+    private javax.swing.Box.Filler[] fillerSPNama;
+    private javax.swing.Box.Filler[] fillerSPHarga;
     private java.awt.Image[] imageCover;
-    private String[] kodeBuku;
+    private String[] kodeSP;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonKembali;
@@ -472,9 +470,9 @@ public class Konfirmasi extends javax.swing.JFrame {
     private javax.swing.Box.Filler fillerPreFooter;
     private javax.swing.Box.Filler fillerPreHeader;
     private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelLogout;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel labelTotal;
-    private javax.swing.JLabel labelUserProfile;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBody;
     private javax.swing.JPanel panelFooter;
