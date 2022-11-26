@@ -12,9 +12,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class LihatSmartphone extends javax.swing.JDialog {
+public class PreviewSmartphone extends javax.swing.JDialog {
 
-    public LihatSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
+    public PreviewSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
         this.parent = parent;
         this.sp = sp;
         this.pembeli = pembeli;
@@ -24,7 +24,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
             this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
                     .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
         } catch (IOException e) {
-            Logger.getLogger(LihatSmartphone.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(PreviewSmartphone.class.getName()).log(Level.SEVERE, null, e);
         }
 
         initComponents();
@@ -60,7 +60,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("YukBeliYuk - Lihat Buku");
         setModal(true);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
@@ -148,7 +147,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
         panelLBBody1.add(panelLBKategori, gridBagConstraints);
 
-        panelLBHarga.setText("Rp. " + String.format("%,d", (int) sp.getHarga()).replace(',', '.'));
+        panelLBHarga.setText("Rp. " + sp.getHarga());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
