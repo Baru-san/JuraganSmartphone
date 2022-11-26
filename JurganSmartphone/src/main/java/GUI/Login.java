@@ -6,6 +6,7 @@ package GUI;
 
 import Classes.Pembeli;
 import Classes.Registrasi;
+import java.awt.FontFormatException;
 import java.io.IOException;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -193,7 +194,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldActionPerformed
 
     private void LoginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginbtnActionPerformed
-        LoginAction();
+        try {
+            LoginAction();
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_LoginbtnActionPerformed
 
     private void RegisterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterbtnActionPerformed
@@ -203,14 +208,14 @@ public class Login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_RegisterbtnActionPerformed
 
-    private void toTheNextPage(Pembeli pembeli){
-        PilihanBuku pb = new PilihanBuku();
+    private void toTheNextPage(Pembeli pembeli) throws FontFormatException{
+        Home pb = new Home();
         pb.setVisible(true);
         
         dispose();
     }
     
-    private void LoginAction() {
+    private void LoginAction() throws FontFormatException {
         emailField.setText(emailField.getText().toLowerCase());
         
         String email = emailField.getText().trim();

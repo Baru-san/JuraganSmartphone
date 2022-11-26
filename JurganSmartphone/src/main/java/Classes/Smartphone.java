@@ -46,8 +46,8 @@ public class Smartphone {
         return this.merek;
     }
 
-    public double getHarga(){
-        return Double.parseDouble(this.harga);
+    public String getHarga(){
+        return harga;
     }   
 
     public double getRating(){

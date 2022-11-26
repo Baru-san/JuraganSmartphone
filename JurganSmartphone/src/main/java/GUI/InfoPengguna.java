@@ -6,6 +6,7 @@ package GUI;
 
 import Classes.Pembeli;
 import Classes.Registrasi;
+import java.awt.FontFormatException;
 
 
 import java.awt.Frame;
@@ -197,7 +198,11 @@ public class InfoPengguna extends javax.swing.JFrame {
     private void LogoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutbtnActionPerformed
         if (regis != null){
             if(regis.getNama().equals("")){
-                createAccountAction();
+                try {
+                    createAccountAction();
+                } catch (FontFormatException ex) {
+                    Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         else {
@@ -218,11 +223,15 @@ public class InfoPengguna extends javax.swing.JFrame {
 
     private void namaFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namaFieldKeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
-            createAccountAction();
+            try {
+                createAccountAction();
+            } catch (FontFormatException ex) {
+                Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_namaFieldKeyPressed
 
-    private void createAccountAction() {
+    private void createAccountAction() throws FontFormatException {
         String nama = namaField.getText().trim();
         if(nama.equals("")) {
             nama = "User-" + regis.getEmail();
