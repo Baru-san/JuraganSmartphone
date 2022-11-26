@@ -7,16 +7,11 @@ import Databases.Fonts.ExFont;
 import java.awt.FontFormatException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import database.Konfigurasi;
-//import gui.dialog.InfoPengguna;
-//import gui.dialog.LihatBuku;
-//import gui.dialog.GuestAlert;
-//import java.awt.FontFormatException;
-import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import javax.imageio.ImageIO;
+//import java.io.File;
 
 public class Home extends javax.swing.JFrame implements ActionListener {
 
@@ -65,7 +60,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         fillerMidHeader = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         Email = new javax.swing.JLabel();
         fillerMid2Header = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
-        Profile = new javax.swing.JLabel();
+        logoutlabel = new javax.swing.JLabel();
         IconKeranjang = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
@@ -77,7 +72,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         panelABBackground = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("YukBeliYuk - Katalog Buku");
+        setTitle("Juragan Smartphone - Produk");
         setMinimumSize(new java.awt.Dimension(600, 500));
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
@@ -103,27 +98,25 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         PanelGradient.add(Email);
         PanelGradient.add(fillerMid2Header);
 
-        Profile.setFont(Xfont.getIcons(25)
-        );
-        Profile.setForeground(new java.awt.Color(255, 255, 255));
-        Profile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Profile.setText("1");
-        Profile.setToolTipText("");
-        Profile.setMaximumSize(new java.awt.Dimension(30, 30));
-        Profile.setMinimumSize(new java.awt.Dimension(30, 30));
-        Profile.setPreferredSize(new java.awt.Dimension(30, 30));
-        Profile.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoutlabel.setForeground(new java.awt.Color(255, 255, 255));
+        logoutlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoutlabel.setText("Log out");
+        logoutlabel.setToolTipText("");
+        logoutlabel.setMaximumSize(new java.awt.Dimension(100, 50));
+        logoutlabel.setMinimumSize(new java.awt.Dimension(100, 50));
+        logoutlabel.setPreferredSize(new java.awt.Dimension(100, 50));
+        logoutlabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ProfileMouseClicked(evt);
+                logoutlabelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ProfileMouseEntered(evt);
+                logoutlabelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ProfileMouseExited(evt);
+                logoutlabelMouseExited(evt);
             }
         });
-        PanelGradient.add(Profile);
+        PanelGradient.add(logoutlabel);
 
         IconKeranjang.setFont(Xfont.getIcons(25)
         );
@@ -177,7 +170,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         panelABBackground.setMinimumSize(new java.awt.Dimension(0, 25));
         panelABBackground.setLayout(new javax.swing.BoxLayout(panelABBackground, javax.swing.BoxLayout.PAGE_AXIS));
         panelAB.add(panelABBackground, java.awt.BorderLayout.CENTER);
-        LB();
+        ListSmartphone();
 
         panelBodyBackground.add(panelAB);
 
@@ -213,26 +206,19 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         
     }//GEN-LAST:event_IconKeranjangMouseClicked
 
-    private void ProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseClicked
-//        if (pembeli.getNama().equals("Guest")) {
-//            GuestAlert dSI = new GuestAlert(this);
-//
-//            dSI.setLocationRelativeTo(null);
-//            dSI.setVisible(true);
-//        } else {
-//            InfoPengguna dIP = new InfoPengguna(this, pembeli);
-//            dIP.setLocationRelativeTo(null);
-//            dIP.setVisible(true);
-//        }
-    }//GEN-LAST:event_ProfileMouseClicked
+    private void logoutlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutlabelMouseClicked
+        Login lg = new Login();
+        lg.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_logoutlabelMouseClicked
 
-    private void ProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseEntered
-        Profile.setForeground(new java.awt.Color(233, 237, 201));
-    }//GEN-LAST:event_ProfileMouseEntered
+    private void logoutlabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutlabelMouseEntered
+        logoutlabel.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_logoutlabelMouseEntered
 
-    private void ProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseExited
-        Profile.setForeground(new java.awt.Color(255, 255, 255));
-    }//GEN-LAST:event_ProfileMouseExited
+    private void logoutlabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutlabelMouseExited
+        logoutlabel.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_logoutlabelMouseExited
 
     private void IconKeranjangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconKeranjangMouseEntered
         IconKeranjang.setForeground(new java.awt.Color(233, 237, 201));
@@ -243,84 +229,61 @@ public class Home extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_IconKeranjangMouseExited
 
 
-    private void LB() {
+    private void ListSmartphone() {
         int size = 20;
 
-        panelLBLoop = new javax.swing.JPanel[size];
-        fillerLBLoopPre = new javax.swing.Box.Filler[size];
-        labelLBLoop1 = new javax.swing.JLabel[size];
-        fillerLBLoop = new javax.swing.Box.Filler[size];
-        labelLBLoop2 = new javax.swing.JLabel[size];
-        fillerLBLoopPos = new javax.swing.Box.Filler[size];
+        panelLSLoop = new javax.swing.JPanel[size];
+        fillerLSLoopPre = new javax.swing.Box.Filler[size];
+        labelLSLoop1 = new javax.swing.JLabel[size];
+        fillerLSLoop = new javax.swing.Box.Filler[size];
+        fillerLSLoopPos = new javax.swing.Box.Filler[size];
         buybtnLoop = new javax.swing.JButton[size];
 
         for (int i = 0; i < size; i++) {
-            panelLBLoop[i] = new javax.swing.JPanel();
-            fillerLBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 32767));
-            labelLBLoop1[i] = new javax.swing.JLabel();
-            fillerLBLoop[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+            panelLSLoop[i] = new javax.swing.JPanel();
+            fillerLSLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 32767));
+            labelLSLoop1[i] = new javax.swing.JLabel();
+            fillerLSLoop[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
             //labelLBLoop2[i] = new javax.swing.JLabel();
-            fillerLBLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250,0), new java.awt.Dimension(250, 32767));
+            fillerLSLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250,0), new java.awt.Dimension(250, 32767));
             buybtnLoop[i] = new javax.swing.JButton();
 
-            panelLBLoop[i].setBackground(new java.awt.Color(255, 255, 255));
-            panelLBLoop[i].setMaximumSize(new java.awt.Dimension(32767, 30));
-            panelLBLoop[i].setMinimumSize(new java.awt.Dimension(0, 30));
-            panelLBLoop[i].setLayout(new javax.swing.BoxLayout(panelLBLoop[i], javax.swing.BoxLayout.LINE_AXIS));
-            panelLBLoop[i].add(fillerLBLoopPre[i]);
+            panelLSLoop[i].setBackground(new java.awt.Color(255, 255, 255));
+            panelLSLoop[i].setMaximumSize(new java.awt.Dimension(32767, 30));
+            panelLSLoop[i].setMinimumSize(new java.awt.Dimension(0, 30));
+            panelLSLoop[i].setLayout(new javax.swing.BoxLayout(panelLSLoop[i], javax.swing.BoxLayout.LINE_AXIS));
+            panelLSLoop[i].add(fillerLSLoopPre[i]);
 
             //labelLBLoop1[i].setFont(konfigurasi.getRoboto(14));
-            labelLBLoop1[i].setText(sp[i].getNama() + " by " + sp[i].getMerek());
-            labelLBLoop1[i].setFont(Xfont.getBaxoe(15));
-            labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
-            labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
-            panelLBLoop[i].add(labelLBLoop1[i]);
-            panelLBLoop[i].add(fillerLBLoop[i]);
+            labelLSLoop1[i].setText(sp[i].getNama() + " by " + sp[i].getMerek());
+            labelLSLoop1[i].setFont(Xfont.getBaxoe(15));
+            labelLSLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
+            labelLSLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
+            panelLSLoop[i].add(labelLSLoop1[i]);
+            panelLSLoop[i].add(fillerLSLoop[i]);
 
-            //labelLBLoop2[i].setFont(konfigurasi.getAwesome(18));
-//            labelLBLoop2[i].setForeground(new java.awt.Color(204, 213, 174));
-//            labelLBLoop2[i].setText("beli");
-//            labelLBLoop2[i].setMinimumSize(new java.awt.Dimension(50, 25));
-//            labelLBLoop2[i].setPreferredSize(new java.awt.Dimension(105, 25));
-//            panelLBLoop[i].add(labelLBLoop2[i]);
-//            panelLBLoop[i].add(fillerLBLoopPos[i]);
-
-              buybtnLoop[i].setText("Beli");
-              buybtnLoop[i].setMinimumSize(new java.awt.Dimension(50, 25));
-              buybtnLoop[i].setPreferredSize(new java.awt.Dimension(100, 50));
-              buybtnLoop[i].setBackground(new java.awt.Color(0,200,255));
-              buybtnLoop[i].setForeground(new java.awt.Color(255,255,255));
-              buybtnLoop[i].setFont(Xfont.getBaxoe(10));
-              panelLBLoop[i].add(buybtnLoop[i]);
-              panelLBLoop[i].add(fillerLBLoopPos[i]);
+            buybtnLoop[i].setText("Beli");
+            buybtnLoop[i].setMinimumSize(new java.awt.Dimension(50, 25));
+            buybtnLoop[i].setPreferredSize(new java.awt.Dimension(100, 50));
+            buybtnLoop[i].setBackground(new java.awt.Color(0,200,255));
+            buybtnLoop[i].setForeground(new java.awt.Color(255,255,255));
+            buybtnLoop[i].setFont(Xfont.getBaxoe(10));
+            panelLSLoop[i].add(buybtnLoop[i]);
+            panelLSLoop[i].add(fillerLSLoopPos[i]);
               
               buybtnLoop[i].addActionListener(this);
 
               buybtnLoop[i].setName("" + i);
-            panelLBLoop[i].setName("" + i);
+            panelLSLoop[i].setName("" + i);
 
-            panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            panelLSLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     panelLBLoopMouseClicked(evt);
                 }
             });
 
-            panelABBackground.add(panelLBLoop[i]);
+            panelABBackground.add(panelLSLoop[i]);
         }
-    }
-
-    private String getStar(double rating) {
-        String stars = "";
-
-        for (int i = 0; i < (int) rating; i++) {
-            stars += "\uf005";
-        }
-
-        if (rating - (int) rating == 0.5) {
-            stars += "\uf089";
-        }
-
-        return stars;
     }
 
     private void panelLBLoopMouseClicked(java.awt.event.MouseEvent evt) {
@@ -340,31 +303,12 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         dLB.beli();
     }
 
-//    private void panelFBLoopMouseClicked(java.awt.event.MouseEvent evt) {
-//        javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
-//        int num = Integer.parseInt(panel.getName());
-//
-//        LihatBuku dLB = new LihatBuku(this, buku[num], pembeli);
-//        dLB.setLocationRelativeTo(null);
-//        dLB.setVisible(true);
-//    }
-
-    // Variables for Looping Featured books
-    private javax.swing.JPanel[] panelFB;
-    private javax.swing.JPanel[] panelFBLoop;
-    private javax.swing.Box.Filler[] fillerFBLoop;
-    private javax.swing.Box.Filler[] fillerFBLoopPre;
-    private javax.swing.Box.Filler[] fillerFBLoopPos;
-    private javax.swing.JLabel[] labelFBLoop;
-    private java.awt.Image[] FB;
-
     // Variables for Looping Listed Books
-    private javax.swing.JPanel[] panelLBLoop;
-    private javax.swing.Box.Filler[] fillerLBLoop;
-    private javax.swing.Box.Filler[] fillerLBLoopPre;
-    private javax.swing.Box.Filler[] fillerLBLoopPos;
-    private javax.swing.JLabel[] labelLBLoop1;
-    private javax.swing.JLabel[] labelLBLoop2;
+    private javax.swing.JPanel[] panelLSLoop;
+    private javax.swing.Box.Filler[] fillerLSLoop;
+    private javax.swing.Box.Filler[] fillerLSLoopPre;
+    private javax.swing.Box.Filler[] fillerLSLoopPos;
+    private javax.swing.JLabel[] labelLSLoop1;
     private javax.swing.JButton[] buybtnLoop;
 
     private Smartphone[] sp;
@@ -375,12 +319,12 @@ public class Home extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel Email;
     private javax.swing.JLabel IconKeranjang;
     private keeptoo.KGradientPanel PanelGradient;
-    private javax.swing.JLabel Profile;
     private javax.swing.Box.Filler fillerMid2Header;
     private javax.swing.Box.Filler fillerMidHeader;
     private javax.swing.Box.Filler fillerPosHeader;
     private javax.swing.Box.Filler fillerPreHeader;
     private javax.swing.JLabel labelTitle;
+    private javax.swing.JLabel logoutlabel;
     private javax.swing.JPanel panelAB;
     private javax.swing.JPanel panelABBackground;
     private javax.swing.JPanel panelBackground;
