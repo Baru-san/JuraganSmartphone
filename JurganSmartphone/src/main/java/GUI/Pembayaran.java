@@ -1,22 +1,13 @@
 package GUI;
 
 import Classes.Pembeli;
-import java.awt.FontFormatException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class Pembayaran extends javax.swing.JDialog {
 
     public Pembayaran(Pembeli pembeli) {
         this.pembeli = pembeli;
         this.status = false;
-
-//        try {
-//            this.konfigurasi = new Konfigurasi();
-//        } catch (IOException | FontFormatException ex) {
-//            Logger.getLogger(Pembayaran.class.getName()).log(Level.SEVERE, null, ex);
-//        }
 
         initComponents();
     }
@@ -31,37 +22,37 @@ public class Pembayaran extends javax.swing.JDialog {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        panelPB = new javax.swing.JPanel();
-        panelPBHeader = new javax.swing.JPanel();
+        panelPS = new javax.swing.JPanel();
+        panelPSHeader = new javax.swing.JPanel();
         labelSIHeader1 = new javax.swing.JLabel();
-        panelPBBody = new javax.swing.JPanel();
-        panelPBEmail = new javax.swing.JPanel();
-        labelPBEmail = new javax.swing.JLabel();
-        fieldPBEmail = new javax.swing.JTextField();
-        panelPBEmailSupport = new javax.swing.JPanel();
-        panelPBEPass = new javax.swing.JPanel();
-        labelPBPass = new javax.swing.JLabel();
-        fieldPBPass = new javax.swing.JPasswordField();
-        panelPBPassSupport = new javax.swing.JPanel();
-        panelPBEmpty = new javax.swing.JPanel();
+        panelPSBody = new javax.swing.JPanel();
+        panelPSEmail = new javax.swing.JPanel();
+        labelPSEmail = new javax.swing.JLabel();
+        fieldPSEmail = new javax.swing.JTextField();
+        panelPSEmailSupport = new javax.swing.JPanel();
+        panelPSEPass = new javax.swing.JPanel();
+        labelPSPass = new javax.swing.JLabel();
+        fieldPSPass = new javax.swing.JPasswordField();
+        panelPSPassSupport = new javax.swing.JPanel();
+        panelPSEmpty = new javax.swing.JPanel();
         labelSalah = new javax.swing.JLabel();
-        panelPBFooter = new javax.swing.JPanel();
-        buttonPBBayar = new javax.swing.JButton();
-        buttonPBKembali = new javax.swing.JButton();
+        panelPSFooter = new javax.swing.JPanel();
+        buttonPSBayar = new javax.swing.JButton();
+        buttonPSKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("YukBayarYuk - Konfirmasi Pembayaran");
+        setTitle("Juragan Smartphone - Konfirmasi Pembayaran");
         setModal(true);
         setSize(new java.awt.Dimension(600, 450));
 
-        panelPB.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelPB.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelPB.setPreferredSize(new java.awt.Dimension(600, 450));
-        panelPB.setLayout(new javax.swing.BoxLayout(panelPB, javax.swing.BoxLayout.PAGE_AXIS));
+        panelPS.setMaximumSize(new java.awt.Dimension(600, 450));
+        panelPS.setMinimumSize(new java.awt.Dimension(600, 450));
+        panelPS.setPreferredSize(new java.awt.Dimension(600, 450));
+        panelPS.setLayout(new javax.swing.BoxLayout(panelPS, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelPBHeader.setBackground(new java.awt.Color(254, 250, 224));
-        panelPBHeader.setMaximumSize(new java.awt.Dimension(2147483647, 60));
-        panelPBHeader.setLayout(new java.awt.GridBagLayout());
+        panelPSHeader.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSHeader.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        panelPSHeader.setLayout(new java.awt.GridBagLayout());
 
         labelSIHeader1.setText("Konfirmasi Pembayaran");
         labelSIHeader1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -73,51 +64,51 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 30);
-        panelPBHeader.add(labelSIHeader1, gridBagConstraints);
+        panelPSHeader.add(labelSIHeader1, gridBagConstraints);
 
-        panelPB.add(panelPBHeader);
+        panelPS.add(panelPSHeader);
 
-        panelPBBody.setBackground(new java.awt.Color(254, 250, 224));
-        panelPBBody.setLayout(new java.awt.GridBagLayout());
+        panelPSBody.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSBody.setLayout(new java.awt.GridBagLayout());
 
-        panelPBEmail.setBackground(new java.awt.Color(254, 250, 224));
-        panelPBEmail.setMaximumSize(new java.awt.Dimension(600, 60));
-        panelPBEmail.setMinimumSize(new java.awt.Dimension(600, 60));
-        panelPBEmail.setPreferredSize(new java.awt.Dimension(600, 60));
-        panelPBEmail.setLayout(new java.awt.GridBagLayout());
+        panelPSEmail.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEmail.setMaximumSize(new java.awt.Dimension(600, 60));
+        panelPSEmail.setMinimumSize(new java.awt.Dimension(600, 60));
+        panelPSEmail.setPreferredSize(new java.awt.Dimension(600, 60));
+        panelPSEmail.setLayout(new java.awt.GridBagLayout());
 
-        labelPBEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPBEmail.setText("Email:");
-        labelPBEmail.setMaximumSize(new java.awt.Dimension(100, 60));
-        labelPBEmail.setMinimumSize(new java.awt.Dimension(100, 60));
-        labelPBEmail.setPreferredSize(new java.awt.Dimension(100, 60));
-        panelPBEmail.add(labelPBEmail, new java.awt.GridBagConstraints());
+        labelPSEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPSEmail.setText("Email:");
+        labelPSEmail.setMaximumSize(new java.awt.Dimension(100, 60));
+        labelPSEmail.setMinimumSize(new java.awt.Dimension(100, 60));
+        labelPSEmail.setPreferredSize(new java.awt.Dimension(100, 60));
+        panelPSEmail.add(labelPSEmail, new java.awt.GridBagConstraints());
 
-        fieldPBEmail.setEditable(false);
-        fieldPBEmail.setBackground(new java.awt.Color(254, 250, 224));
-        fieldPBEmail.setText(pembeli.getEmail());
-        fieldPBEmail.setBorder(null);
-        fieldPBEmail.setMaximumSize(new java.awt.Dimension(425, 50));
-        fieldPBEmail.setMinimumSize(new java.awt.Dimension(425, 50));
-        fieldPBEmail.setPreferredSize(new java.awt.Dimension(425, 50));
+        fieldPSEmail.setEditable(false);
+        fieldPSEmail.setBackground(new java.awt.Color(254, 250, 224));
+        fieldPSEmail.setText(pembeli.getEmail());
+        fieldPSEmail.setBorder(null);
+        fieldPSEmail.setMaximumSize(new java.awt.Dimension(425, 50));
+        fieldPSEmail.setMinimumSize(new java.awt.Dimension(425, 50));
+        fieldPSEmail.setPreferredSize(new java.awt.Dimension(425, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelPBEmail.add(fieldPBEmail, gridBagConstraints);
+        panelPSEmail.add(fieldPSEmail, gridBagConstraints);
 
-        panelPBEmailSupport.setBackground(fieldPBEmail.getBackground());
-        panelPBEmailSupport.setMaximumSize(new java.awt.Dimension(450, 50));
-        panelPBEmailSupport.setMinimumSize(new java.awt.Dimension(450, 50));
+        panelPSEmailSupport.setBackground(fieldPSEmail.getBackground());
+        panelPSEmailSupport.setMaximumSize(new java.awt.Dimension(450, 50));
+        panelPSEmailSupport.setMinimumSize(new java.awt.Dimension(450, 50));
 
-        javax.swing.GroupLayout panelPBEmailSupportLayout = new javax.swing.GroupLayout(panelPBEmailSupport);
-        panelPBEmailSupport.setLayout(panelPBEmailSupportLayout);
-        panelPBEmailSupportLayout.setHorizontalGroup(
-            panelPBEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelPSEmailSupportLayout = new javax.swing.GroupLayout(panelPSEmailSupport);
+        panelPSEmailSupport.setLayout(panelPSEmailSupportLayout);
+        panelPSEmailSupportLayout.setHorizontalGroup(
+            panelPSEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        panelPBEmailSupportLayout.setVerticalGroup(
-            panelPBEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelPSEmailSupportLayout.setVerticalGroup(
+            panelPSEmailSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -125,56 +116,56 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelPBEmail.add(panelPBEmailSupport, gridBagConstraints);
+        panelPSEmail.add(panelPSEmailSupport, gridBagConstraints);
 
-        panelPBBody.add(panelPBEmail, new java.awt.GridBagConstraints());
+        panelPSBody.add(panelPSEmail, new java.awt.GridBagConstraints());
 
-        panelPBEPass.setBackground(new java.awt.Color(254, 250, 224));
-        panelPBEPass.setMaximumSize(new java.awt.Dimension(600, 60));
-        panelPBEPass.setMinimumSize(new java.awt.Dimension(600, 60));
-        panelPBEPass.setPreferredSize(new java.awt.Dimension(600, 60));
-        panelPBEPass.setLayout(new java.awt.GridBagLayout());
+        panelPSEPass.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEPass.setMaximumSize(new java.awt.Dimension(600, 60));
+        panelPSEPass.setMinimumSize(new java.awt.Dimension(600, 60));
+        panelPSEPass.setPreferredSize(new java.awt.Dimension(600, 60));
+        panelPSEPass.setLayout(new java.awt.GridBagLayout());
 
-        labelPBPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPBPass.setText("Pass:");
-        labelPBPass.setMaximumSize(new java.awt.Dimension(100, 60));
-        labelPBPass.setMinimumSize(new java.awt.Dimension(100, 60));
-        labelPBPass.setPreferredSize(new java.awt.Dimension(100, 60));
-        panelPBEPass.add(labelPBPass, new java.awt.GridBagConstraints());
+        labelPSPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPSPass.setText("Pass:");
+        labelPSPass.setMaximumSize(new java.awt.Dimension(100, 60));
+        labelPSPass.setMinimumSize(new java.awt.Dimension(100, 60));
+        labelPSPass.setPreferredSize(new java.awt.Dimension(100, 60));
+        panelPSEPass.add(labelPSPass, new java.awt.GridBagConstraints());
 
-        fieldPBPass.setBackground(new java.awt.Color(255, 255, 254));
-        fieldPBPass.setBorder(null);
-        fieldPBPass.setMaximumSize(new java.awt.Dimension(425, 50));
-        fieldPBPass.setMinimumSize(new java.awt.Dimension(425, 50));
-        fieldPBPass.setPreferredSize(new java.awt.Dimension(425, 50));
-        fieldPBPass.addFocusListener(new java.awt.event.FocusAdapter() {
+        fieldPSPass.setBackground(new java.awt.Color(255, 255, 254));
+        fieldPSPass.setBorder(null);
+        fieldPSPass.setMaximumSize(new java.awt.Dimension(425, 50));
+        fieldPSPass.setMinimumSize(new java.awt.Dimension(425, 50));
+        fieldPSPass.setPreferredSize(new java.awt.Dimension(425, 50));
+        fieldPSPass.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                fieldPBPassFocusGained(evt);
+                fieldPSPassFocusGained(evt);
             }
         });
-        fieldPBPass.addKeyListener(new java.awt.event.KeyAdapter() {
+        fieldPSPass.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                fieldPBPassKeyPressed(evt);
+                fieldPSPassKeyPressed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelPBEPass.add(fieldPBPass, gridBagConstraints);
+        panelPSEPass.add(fieldPSPass, gridBagConstraints);
 
-        panelPBPassSupport.setBackground(fieldPBPass.getBackground());
-        panelPBPassSupport.setMaximumSize(new java.awt.Dimension(450, 50));
-        panelPBPassSupport.setMinimumSize(new java.awt.Dimension(450, 50));
+        panelPSPassSupport.setBackground(fieldPSPass.getBackground());
+        panelPSPassSupport.setMaximumSize(new java.awt.Dimension(450, 50));
+        panelPSPassSupport.setMinimumSize(new java.awt.Dimension(450, 50));
 
-        javax.swing.GroupLayout panelPBPassSupportLayout = new javax.swing.GroupLayout(panelPBPassSupport);
-        panelPBPassSupport.setLayout(panelPBPassSupportLayout);
-        panelPBPassSupportLayout.setHorizontalGroup(
-            panelPBPassSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelPSPassSupportLayout = new javax.swing.GroupLayout(panelPSPassSupport);
+        panelPSPassSupport.setLayout(panelPSPassSupportLayout);
+        panelPSPassSupportLayout.setHorizontalGroup(
+            panelPSPassSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        panelPBPassSupportLayout.setVerticalGroup(
-            panelPBPassSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelPSPassSupportLayout.setVerticalGroup(
+            panelPSPassSupportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -182,111 +173,111 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        panelPBEPass.add(panelPBPassSupport, gridBagConstraints);
+        panelPSEPass.add(panelPSPassSupport, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        panelPBBody.add(panelPBEPass, gridBagConstraints);
+        panelPSBody.add(panelPSEPass, gridBagConstraints);
 
-        panelPBEmpty.setBackground(new java.awt.Color(254, 250, 224));
-        panelPBEmpty.setMinimumSize(new java.awt.Dimension(600, 155));
-        panelPBEmpty.setPreferredSize(new java.awt.Dimension(600, 175));
-        panelPBEmpty.setLayout(new java.awt.BorderLayout());
+        panelPSEmpty.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEmpty.setMinimumSize(new java.awt.Dimension(600, 155));
+        panelPSEmpty.setPreferredSize(new java.awt.Dimension(600, 175));
+        panelPSEmpty.setLayout(new java.awt.BorderLayout());
 
         labelSalah.setForeground(new java.awt.Color(255, 0, 0));
         labelSalah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSalah.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        panelPBEmpty.add(labelSalah, java.awt.BorderLayout.CENTER);
+        panelPSEmpty.add(labelSalah, java.awt.BorderLayout.CENTER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        panelPBBody.add(panelPBEmpty, gridBagConstraints);
+        panelPSBody.add(panelPSEmpty, gridBagConstraints);
 
-        panelPB.add(panelPBBody);
+        panelPS.add(panelPSBody);
 
-        panelPBFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelPBFooter.setMaximumSize(new java.awt.Dimension(32767, 75));
-        panelPBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
+        panelPSFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelPSFooter.setMaximumSize(new java.awt.Dimension(32767, 75));
+        panelPSFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
-        buttonPBBayar.setBackground(new java.awt.Color(212, 163, 115));
-        buttonPBBayar.setText("Bayar");
-        buttonPBBayar.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonPBBayar.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonPBBayar.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonPBBayar.addActionListener(new java.awt.event.ActionListener() {
+        buttonPSBayar.setBackground(new java.awt.Color(212, 163, 115));
+        buttonPSBayar.setText("Bayar");
+        buttonPSBayar.setMaximumSize(new java.awt.Dimension(175, 50));
+        buttonPSBayar.setMinimumSize(new java.awt.Dimension(175, 50));
+        buttonPSBayar.setPreferredSize(new java.awt.Dimension(175, 50));
+        buttonPSBayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPBBayarActionPerformed(evt);
+                buttonPSBayarActionPerformed(evt);
             }
         });
 
-        buttonPBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonPBKembali.setText("Kembali");
-        buttonPBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonPBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonPBKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonPBKembali.addActionListener(new java.awt.event.ActionListener() {
+        buttonPSKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonPSKembali.setText("Kembali");
+        buttonPSKembali.setMaximumSize(new java.awt.Dimension(175, 50));
+        buttonPSKembali.setMinimumSize(new java.awt.Dimension(175, 50));
+        buttonPSKembali.setPreferredSize(new java.awt.Dimension(175, 50));
+        buttonPSKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPBKembaliActionPerformed(evt);
+                buttonPSKembaliActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelPBFooterLayout = new javax.swing.GroupLayout(panelPBFooter);
-        panelPBFooter.setLayout(panelPBFooterLayout);
-        panelPBFooterLayout.setHorizontalGroup(
-            panelPBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPBFooterLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelPSFooterLayout = new javax.swing.GroupLayout(panelPSFooter);
+        panelPSFooter.setLayout(panelPSFooterLayout);
+        panelPSFooterLayout.setHorizontalGroup(
+            panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPSFooterLayout.createSequentialGroup()
                 .addGap(226, 226, 226)
-                .addComponent(buttonPBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonPSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonPBBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonPSBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(199, 199, 199))
         );
-        panelPBFooterLayout.setVerticalGroup(
-            panelPBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPBFooterLayout.createSequentialGroup()
+        panelPSFooterLayout.setVerticalGroup(
+            panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPSFooterLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(panelPBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonPBBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonPBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonPSBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonPSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(13, 13, 13))
         );
 
-        panelPB.add(panelPBFooter);
+        panelPS.add(panelPSFooter);
 
-        getContentPane().add(panelPB, java.awt.BorderLayout.CENTER);
+        getContentPane().add(panelPS, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonPBBayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPBBayarActionPerformed
+    private void buttonPSBayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPSBayarActionPerformed
         cekPassword();
-    }//GEN-LAST:event_buttonPBBayarActionPerformed
+    }//GEN-LAST:event_buttonPSBayarActionPerformed
 
-    private void buttonPBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPBKembaliActionPerformed
+    private void buttonPSKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPSKembaliActionPerformed
         dispose();
-    }//GEN-LAST:event_buttonPBKembaliActionPerformed
+    }//GEN-LAST:event_buttonPSKembaliActionPerformed
 
-    private void fieldPBPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldPBPassKeyPressed
+    private void fieldPSPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldPSPassKeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             cekPassword();
         }
-    }//GEN-LAST:event_fieldPBPassKeyPressed
+    }//GEN-LAST:event_fieldPSPassKeyPressed
 
-    private void fieldPBPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldPBPassFocusGained
+    private void fieldPSPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldPSPassFocusGained
         labelSalah.setText("");
-    }//GEN-LAST:event_fieldPBPassFocusGained
+    }//GEN-LAST:event_fieldPSPassFocusGained
 
     private void cekPassword() {
-        String passW = String.valueOf(fieldPBPass.getPassword());
+        String passW = String.valueOf(fieldPSPass.getPassword());
         if (passW.equals(pembeli.getPassword())) {
             status = true;
             dispose();
         } else {
             labelSalah.setText("\nPassword yang anda masukkan salah.");
-            fieldPBPass.setText("");
+            fieldPSPass.setText("");
         }
     }
 
@@ -295,26 +286,25 @@ public class Pembayaran extends javax.swing.JDialog {
     }
 
     private Pembeli pembeli;
-    //private Konfigurasi konfigurasi;
     private boolean status;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonPBBayar;
-    private javax.swing.JButton buttonPBKembali;
-    private javax.swing.JTextField fieldPBEmail;
-    private javax.swing.JPasswordField fieldPBPass;
-    private javax.swing.JLabel labelPBEmail;
-    private javax.swing.JLabel labelPBPass;
+    private javax.swing.JButton buttonPSBayar;
+    private javax.swing.JButton buttonPSKembali;
+    private javax.swing.JTextField fieldPSEmail;
+    private javax.swing.JPasswordField fieldPSPass;
+    private javax.swing.JLabel labelPSEmail;
+    private javax.swing.JLabel labelPSPass;
     private javax.swing.JLabel labelSIHeader1;
     private javax.swing.JLabel labelSalah;
-    private javax.swing.JPanel panelPB;
-    private javax.swing.JPanel panelPBBody;
-    private javax.swing.JPanel panelPBEPass;
-    private javax.swing.JPanel panelPBEmail;
-    private javax.swing.JPanel panelPBEmailSupport;
-    private javax.swing.JPanel panelPBEmpty;
-    private javax.swing.JPanel panelPBFooter;
-    private javax.swing.JPanel panelPBHeader;
-    private javax.swing.JPanel panelPBPassSupport;
+    private javax.swing.JPanel panelPS;
+    private javax.swing.JPanel panelPSBody;
+    private javax.swing.JPanel panelPSEPass;
+    private javax.swing.JPanel panelPSEmail;
+    private javax.swing.JPanel panelPSEmailSupport;
+    private javax.swing.JPanel panelPSEmpty;
+    private javax.swing.JPanel panelPSFooter;
+    private javax.swing.JPanel panelPSHeader;
+    private javax.swing.JPanel panelPSPassSupport;
     // End of variables declaration//GEN-END:variables
 }
