@@ -2,7 +2,6 @@ package GUI;
 
 import Classes.Smartphone;
 import Classes.Pembeli;
-//import Database.Konfigurasi;
 import java.awt.FontFormatException;
 import java.awt.Image;
 import java.io.File;
@@ -20,7 +19,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
         this.pembeli = pembeli;
 
         try {
-            //this.konfigurasi = new Konfigurasi();
             this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
                     .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
         } catch (IOException e) {
@@ -54,7 +52,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
         scrollPaneLB = new javax.swing.JScrollPane();
         textAreaLBReview = new javax.swing.JTextArea();
         panelLBFooter = new javax.swing.JPanel();
-        buttonLBKeranjang = new javax.swing.JButton();
         buttonLBKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -130,7 +127,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         panelLBBody1.add(panelLBJudul, gridBagConstraints);
 
-        panelLBPenulis.setText("<html>" + sp.getMerek() + "</html>");
+        panelLBPenulis.setText("<html>" + "Merek : " + sp.getMerek() + "</html>");
         panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -184,17 +181,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
         panelLBFooter.setMaximumSize(new java.awt.Dimension(600, 75));
         panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
-        buttonLBKeranjang.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKeranjang.setText("Masukkan Keranjang");
-        buttonLBKeranjang.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonLBKeranjang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLBKeranjangActionPerformed(evt);
-            }
-        });
-
         buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
         buttonLBKembali.setText("Kembali");
         buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
@@ -211,19 +197,15 @@ public class LihatSmartphone extends javax.swing.JDialog {
         panelLBFooterLayout.setHorizontalGroup(
             panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLBFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
+                .addGap(364, 364, 364)
                 .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
+                .addGap(58, 58, 58))
         );
         panelLBFooterLayout.setVerticalGroup(
             panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLBFooterLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonLBKeranjang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(13, 13, 13))
         );
 
@@ -233,20 +215,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonLBKeranjangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKeranjangActionPerformed
-//        if (pembeli.getNama().equals("Guest")) {
-//            dispose();
-//
-//            GuestAlert dSI = new GuestAlert(parent);
-//            dSI.setLocationRelativeTo(null);
-//            dSI.setVisible(true);
-//        } else {
-//            dispose();
-//
-//            pembeli.addBuku(buku.getKode(), buku);
-//        }
-    }//GEN-LAST:event_buttonLBKeranjangActionPerformed
 
     private void buttonLBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKembaliActionPerformed
         dispose();
@@ -278,7 +246,6 @@ public class LihatSmartphone extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLBKembali;
-    private javax.swing.JButton buttonLBKeranjang;
     private javax.swing.JLabel labelLBCover;
     private javax.swing.JPanel panelLB;
     private javax.swing.JPanel panelLBBody1;
