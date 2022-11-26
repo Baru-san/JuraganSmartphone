@@ -4,7 +4,7 @@ an003,Galaxy A13,Samsung,15000000,4.2,Image/galaxy 13.jpg
 an004,Galaxy Z Fold 4,Samsung,24000000,4.6,Image/fold4.jpg
 an005,GT Neo3,Realme,5600000,4.3,Image/gt neo3.jpg
 an006,Redmi Note 10,Xiaomi,5600000,4.3,Image/redmi note 10.jpg
-an007,Zero 8,Infinix,3400000,3.8,Image/infinix zero 9.jpg
+an007,Zero 8,Infinix,3400000,3.8,Image/infinix zero 8.jpg
 an008,Y7 Pro, Huawei,2500000,4.4,Image/y7 pro.jpg
 an009,Galaxy M20,Samsung,950000,4.5,Image/galaxy m20.jpg
 an010,Iphone 13 Pro Max,Apple,18000000,5.0,Image/Iphone 13 Pro Max.jpg

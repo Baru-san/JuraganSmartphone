@@ -12,9 +12,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class LihatSmartphone extends javax.swing.JDialog {
+public class PreviewSmartphone extends javax.swing.JDialog {
 
-    public LihatSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
+    public PreviewSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
         this.parent = parent;
         this.sp = sp;
         this.pembeli = pembeli;
@@ -22,9 +22,9 @@ public class LihatSmartphone extends javax.swing.JDialog {
         try {
             //this.konfigurasi = new Konfigurasi();
             this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
-                    .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
+                    .getScaledInstance(100, 100, Image.SCALE_AREA_AVERAGING);
         } catch (IOException e) {
-            Logger.getLogger(LihatSmartphone.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(PreviewSmartphone.class.getName()).log(Level.SEVERE, null, e);
         }
 
         initComponents();
@@ -58,17 +58,16 @@ public class LihatSmartphone extends javax.swing.JDialog {
         buttonLBKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("YukBeliYuk - Lihat Buku");
         setModal(true);
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
-        panelLB.setBackground(new java.awt.Color(254, 250, 224));
+        panelLB.setBackground(new java.awt.Color(255, 255, 255));
         panelLB.setMaximumSize(new java.awt.Dimension(600, 450));
         panelLB.setMinimumSize(new java.awt.Dimension(600, 450));
         panelLB.setLayout(new javax.swing.BoxLayout(panelLB, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelLBBody1.setBackground(new java.awt.Color(254, 250, 224));
+        panelLBBody1.setBackground(new java.awt.Color(255, 255, 255));
         panelLBBody1.setMaximumSize(new java.awt.Dimension(600, 225));
         panelLBBody1.setMinimumSize(new java.awt.Dimension(600, 225));
         panelLBBody1.setPreferredSize(new java.awt.Dimension(600, 225));
@@ -85,6 +84,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
         panelLBCoverSupport.setMinimumSize(new java.awt.Dimension(120, 180));
         panelLBCoverSupport.setLayout(new java.awt.BorderLayout());
 
+        labelLBCover.setBackground(new java.awt.Color(255, 255, 255));
         labelLBCover.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelLBCover.setIcon(new ImageIcon(cover));
         labelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
@@ -156,7 +156,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
 
         panelLB.add(panelLBBody1);
 
-        panelLBBody2.setBackground(new java.awt.Color(254, 250, 224));
+        panelLBBody2.setBackground(new java.awt.Color(255, 255, 255));
         panelLBBody2.setLayout(new java.awt.GridBagLayout());
 
         scrollPaneLB.setBorder(null);
@@ -167,7 +167,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
         scrollPaneLB.setPreferredSize(new java.awt.Dimension(550, 150));
 
         textAreaLBReview.setEditable(false);
-        textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
+        textAreaLBReview.setBackground(new java.awt.Color(255, 255, 255));
         textAreaLBReview.setColumns(20);
         textAreaLBReview.setText("No Review");
         textAreaLBReview.setWrapStyleWord(true);
@@ -180,7 +180,7 @@ public class LihatSmartphone extends javax.swing.JDialog {
 
         panelLB.add(panelLBBody2);
 
-        panelLBFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelLBFooter.setBackground(new java.awt.Color(255, 255, 255));
         panelLBFooter.setMaximumSize(new java.awt.Dimension(600, 75));
         panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 

@@ -3,6 +3,8 @@ package GUI;
 import Classes.Smartphone;
 import Classes.Pembeli;
 import Databases.Database;
+import Databases.Fonts.ExFont;
+import java.awt.FontFormatException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 //import database.Konfigurasi;
@@ -18,15 +20,14 @@ import javax.imageio.ImageIO;
 
 public class Home extends javax.swing.JFrame implements ActionListener {
 
+    
     public Home() {
         this.sp = new Smartphone[30];
         this.pembeli = new Pembeli();
 
-//        try {
-//            this.konfigurasi = new Konfigurasi();
-//        } catch (IOException | FontFormatException ex) {
-//            Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            this.Xfont = new ExFont();
+        } catch (IOException | FontFormatException ex) {}
 
         Database db = new Database();
         sp = db.buatObjekSmartphone();
@@ -38,11 +39,10 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         this.sp = new Smartphone[30];
         this.pembeli = pembeli;
 
-//        try {
-//            this.konfigurasi = new Konfigurasi();
-//        } catch (IOException | FontFormatException ex) {
-//            Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            this.Xfont = new ExFont();
+        } catch (IOException | FontFormatException ex) {}
+
 
         Database db = new Database();
         sp = db.buatObjekSmartphone();
@@ -59,91 +59,95 @@ public class Home extends javax.swing.JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelHeader = new javax.swing.JPanel();
+        PanelGradient = new keeptoo.KGradientPanel();
         fillerPreHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         labelTitle = new javax.swing.JLabel();
         fillerMidHeader = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        labelEmail = new javax.swing.JLabel();
+        Email = new javax.swing.JLabel();
         fillerMid2Header = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 32767));
-        labelUserProfile = new javax.swing.JLabel();
-        labelBeliBuku = new javax.swing.JLabel();
+        Profile = new javax.swing.JLabel();
+        IconKeranjang = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
         panelBody = new javax.swing.JPanel();
         scrollPaneMain = new javax.swing.JScrollPane();
         panelBackground = new javax.swing.JPanel();
         panelBodySupport = new javax.swing.JPanel();
         panelBodyBackground = new javax.swing.JPanel();
-        panelFBSupport = new javax.swing.JPanel();
-        fillerPreFB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        labelFBTitle = new javax.swing.JLabel();
-        panelABSupport = new javax.swing.JPanel();
-        fillerPreAB = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
-        labelABTitle = new javax.swing.JLabel();
         panelAB = new javax.swing.JPanel();
         panelABBackground = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("YukBeliYuk - Katalog Buku");
         setMinimumSize(new java.awt.Dimension(600, 500));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelHeader.setBackground(new java.awt.Color(204, 213, 174));
-        panelHeader.setMaximumSize(new java.awt.Dimension(32767, 60));
-        panelHeader.setMinimumSize(new java.awt.Dimension(800, 60));
-        panelHeader.setPreferredSize(new java.awt.Dimension(800, 60));
-        panelHeader.setLayout(new javax.swing.BoxLayout(panelHeader, javax.swing.BoxLayout.LINE_AXIS));
-        panelHeader.add(fillerPreHeader);
+        PanelGradient.setkGradientFocus(1500);
+        PanelGradient.setkStartColor(new java.awt.Color(0, 230, 204));
+        PanelGradient.setPreferredSize(new java.awt.Dimension(286, 60));
+        PanelGradient.setLayout(new javax.swing.BoxLayout(PanelGradient, javax.swing.BoxLayout.LINE_AXIS));
+        PanelGradient.add(fillerPreHeader);
 
-        labelTitle.setText("YukBeliYuk");
-        panelHeader.add(labelTitle);
-        panelHeader.add(fillerMidHeader);
+        labelTitle.setFont(Xfont.getOmegle(25)
+        );
+        labelTitle.setForeground(new java.awt.Color(255, 255, 255));
+        labelTitle.setText("JuraganSmartphone");
+        PanelGradient.add(labelTitle);
+        labelTitle.getAccessibleContext().setAccessibleName("");
 
-        labelEmail.setForeground(new java.awt.Color(255, 255, 255));
-        labelEmail.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        labelEmail.setText(pembeli.getNama());
-        panelHeader.add(labelEmail);
-        panelHeader.add(fillerMid2Header);
+        PanelGradient.add(fillerMidHeader);
 
-        labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
-        labelUserProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelUserProfile.setText("\uf007");
-        labelUserProfile.setMaximumSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.setMinimumSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.setPreferredSize(new java.awt.Dimension(30, 30));
-        labelUserProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+        Email.setForeground(new java.awt.Color(255, 255, 255));
+        Email.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        Email.setText(pembeli.getNama());
+        PanelGradient.add(Email);
+        PanelGradient.add(fillerMid2Header);
+
+        Profile.setFont(Xfont.getIcons(25)
+        );
+        Profile.setForeground(new java.awt.Color(255, 255, 255));
+        Profile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Profile.setText("1");
+        Profile.setToolTipText("");
+        Profile.setMaximumSize(new java.awt.Dimension(30, 30));
+        Profile.setMinimumSize(new java.awt.Dimension(30, 30));
+        Profile.setPreferredSize(new java.awt.Dimension(30, 30));
+        Profile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseClicked(evt);
+                ProfileMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseEntered(evt);
+                ProfileMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelUserProfileMouseExited(evt);
+                ProfileMouseExited(evt);
             }
         });
-        panelHeader.add(labelUserProfile);
+        PanelGradient.add(Profile);
 
-        labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
-        labelBeliBuku.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelBeliBuku.setText("\uf07a");
-        labelBeliBuku.setMaximumSize(new java.awt.Dimension(30, 30));
-        labelBeliBuku.setMinimumSize(new java.awt.Dimension(30, 30));
-        labelBeliBuku.setPreferredSize(new java.awt.Dimension(30, 30));
-        labelBeliBuku.addMouseListener(new java.awt.event.MouseAdapter() {
+        IconKeranjang.setFont(Xfont.getIcons(25)
+        );
+        IconKeranjang.setForeground(new java.awt.Color(255, 255, 255));
+        IconKeranjang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconKeranjang.setText("c");
+        IconKeranjang.setMaximumSize(new java.awt.Dimension(30, 30));
+        IconKeranjang.setMinimumSize(new java.awt.Dimension(30, 30));
+        IconKeranjang.setPreferredSize(new java.awt.Dimension(30, 30));
+        IconKeranjang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelBeliBukuMouseClicked(evt);
+                IconKeranjangMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelBeliBukuMouseEntered(evt);
+                IconKeranjangMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelBeliBukuMouseExited(evt);
+                IconKeranjangMouseExited(evt);
             }
         });
-        panelHeader.add(labelBeliBuku);
-        panelHeader.add(fillerPosHeader);
+        PanelGradient.add(IconKeranjang);
+        PanelGradient.add(fillerPosHeader);
 
-        getContentPane().add(panelHeader);
+        getContentPane().add(PanelGradient);
 
         panelBody.setMinimumSize(new java.awt.Dimension(822, 460));
         panelBody.setPreferredSize(new java.awt.Dimension(822, 460));
@@ -165,39 +169,10 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         panelBodyBackground.setBackground(new java.awt.Color(233, 237, 201));
         panelBodyBackground.setLayout(new javax.swing.BoxLayout(panelBodyBackground, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelFBSupport.setBackground(new java.awt.Color(233, 237, 201));
-        panelFBSupport.setMaximumSize(new java.awt.Dimension(2147483647, 50));
-        panelFBSupport.setPreferredSize(new java.awt.Dimension(805, 50));
-        panelFBSupport.setLayout(new javax.swing.BoxLayout(panelFBSupport, javax.swing.BoxLayout.LINE_AXIS));
-        panelFBSupport.add(fillerPreFB);
-
-        labelFBTitle.setText("Featured Books");
-        labelFBTitle.setMaximumSize(new java.awt.Dimension(258, 50));
-        labelFBTitle.setMinimumSize(new java.awt.Dimension(258, 50));
-        labelFBTitle.setPreferredSize(new java.awt.Dimension(258, 50));
-        panelFBSupport.add(labelFBTitle);
-
-        panelBodyBackground.add(panelFBSupport);
-
-        panelABSupport.setBackground(new java.awt.Color(233, 237, 201));
-        panelABSupport.setMaximumSize(new java.awt.Dimension(2147483647, 50));
-        panelABSupport.setMinimumSize(new java.awt.Dimension(258, 50));
-        panelABSupport.setPreferredSize(new java.awt.Dimension(805, 50));
-        panelABSupport.setLayout(new javax.swing.BoxLayout(panelABSupport, javax.swing.BoxLayout.LINE_AXIS));
-        panelABSupport.add(fillerPreAB);
-
-        labelABTitle.setText("All Books");
-        labelABTitle.setMaximumSize(new java.awt.Dimension(164, 50));
-        labelABTitle.setMinimumSize(new java.awt.Dimension(164, 50));
-        labelABTitle.setPreferredSize(new java.awt.Dimension(164, 50));
-        panelABSupport.add(labelABTitle);
-
-        panelBodyBackground.add(panelABSupport);
-
         panelAB.setBackground(new java.awt.Color(254, 250, 224));
         panelAB.setLayout(new java.awt.BorderLayout());
 
-        panelABBackground.setBackground(new java.awt.Color(254, 250, 224));
+        panelABBackground.setBackground(new java.awt.Color(255, 255, 255));
         panelABBackground.setMaximumSize(new java.awt.Dimension(32767, 25));
         panelABBackground.setMinimumSize(new java.awt.Dimension(0, 25));
         panelABBackground.setLayout(new javax.swing.BoxLayout(panelABBackground, javax.swing.BoxLayout.PAGE_AXIS));
@@ -216,11 +191,13 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
         getContentPane().add(panelBody);
 
+        getAccessibleContext().setAccessibleName("");
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
+    private void IconKeranjangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconKeranjangMouseClicked
 
             Konfirmasi KO = new Konfirmasi(pembeli);
             KO.setLocation(getLocation());
@@ -234,9 +211,9 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
             dispose();
         
-    }//GEN-LAST:event_labelBeliBukuMouseClicked
+    }//GEN-LAST:event_IconKeranjangMouseClicked
 
-    private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
+    private void ProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseClicked
 //        if (pembeli.getNama().equals("Guest")) {
 //            GuestAlert dSI = new GuestAlert(this);
 //
@@ -247,23 +224,23 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 //            dIP.setLocationRelativeTo(null);
 //            dIP.setVisible(true);
 //        }
-    }//GEN-LAST:event_labelUserProfileMouseClicked
+    }//GEN-LAST:event_ProfileMouseClicked
 
-    private void labelUserProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseEntered
-        labelUserProfile.setForeground(new java.awt.Color(233, 237, 201));
-    }//GEN-LAST:event_labelUserProfileMouseEntered
+    private void ProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseEntered
+        Profile.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_ProfileMouseEntered
 
-    private void labelUserProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseExited
-        labelUserProfile.setForeground(new java.awt.Color(255, 255, 255));
-    }//GEN-LAST:event_labelUserProfileMouseExited
+    private void ProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProfileMouseExited
+        Profile.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_ProfileMouseExited
 
-    private void labelBeliBukuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseEntered
-        labelBeliBuku.setForeground(new java.awt.Color(233, 237, 201));
-    }//GEN-LAST:event_labelBeliBukuMouseEntered
+    private void IconKeranjangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconKeranjangMouseEntered
+        IconKeranjang.setForeground(new java.awt.Color(233, 237, 201));
+    }//GEN-LAST:event_IconKeranjangMouseEntered
 
-    private void labelBeliBukuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseExited
-        labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
-    }//GEN-LAST:event_labelBeliBukuMouseExited
+    private void IconKeranjangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconKeranjangMouseExited
+        IconKeranjang.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_IconKeranjangMouseExited
 
 
     private void LB() {
@@ -279,14 +256,14 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
         for (int i = 0; i < size; i++) {
             panelLBLoop[i] = new javax.swing.JPanel();
-            fillerLBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+            fillerLBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 0), new java.awt.Dimension(250, 32767));
             labelLBLoop1[i] = new javax.swing.JLabel();
             fillerLBLoop[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
             //labelLBLoop2[i] = new javax.swing.JLabel();
-            fillerLBLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
+            fillerLBLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(250, 0), new java.awt.Dimension(250,0), new java.awt.Dimension(250, 32767));
             buybtnLoop[i] = new javax.swing.JButton();
 
-            panelLBLoop[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelLBLoop[i].setBackground(new java.awt.Color(255, 255, 255));
             panelLBLoop[i].setMaximumSize(new java.awt.Dimension(32767, 30));
             panelLBLoop[i].setMinimumSize(new java.awt.Dimension(0, 30));
             panelLBLoop[i].setLayout(new javax.swing.BoxLayout(panelLBLoop[i], javax.swing.BoxLayout.LINE_AXIS));
@@ -294,6 +271,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
             //labelLBLoop1[i].setFont(konfigurasi.getRoboto(14));
             labelLBLoop1[i].setText(sp[i].getNama() + " by " + sp[i].getMerek());
+            labelLBLoop1[i].setFont(Xfont.getBaxoe(15));
             labelLBLoop1[i].setMaximumSize(new java.awt.Dimension(600, 30));
             labelLBLoop1[i].setMinimumSize(new java.awt.Dimension(500, 30));
             panelLBLoop[i].add(labelLBLoop1[i]);
@@ -307,9 +285,12 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 //            panelLBLoop[i].add(labelLBLoop2[i]);
 //            panelLBLoop[i].add(fillerLBLoopPos[i]);
 
-              buybtnLoop[i].setText("beli");
+              buybtnLoop[i].setText("Beli");
               buybtnLoop[i].setMinimumSize(new java.awt.Dimension(50, 25));
               buybtnLoop[i].setPreferredSize(new java.awt.Dimension(100, 50));
+              buybtnLoop[i].setBackground(new java.awt.Color(0,200,255));
+              buybtnLoop[i].setForeground(new java.awt.Color(255,255,255));
+              buybtnLoop[i].setFont(Xfont.getBaxoe(10));
               panelLBLoop[i].add(buybtnLoop[i]);
               panelLBLoop[i].add(fillerLBLoopPos[i]);
               
@@ -346,7 +327,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
         int num = Integer.parseInt(panel.getName());
 
-        LihatSmartphone dLB = new LihatSmartphone(this, sp[num], pembeli);
+        PreviewSmartphone dLB = new PreviewSmartphone(this, sp[num], pembeli);
         dLB.setLocationRelativeTo(null);
         dLB.setVisible(true);
     }
@@ -355,7 +336,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         javax.swing.JButton button = (javax.swing.JButton) e.getSource();
         int num = Integer.parseInt(button.getName());
         
-        LihatSmartphone dLB = new LihatSmartphone(this, sp[num], pembeli);
+        PreviewSmartphone dLB = new PreviewSmartphone(this, sp[num], pembeli);
         dLB.beli();
     }
 
@@ -388,29 +369,24 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
     private Smartphone[] sp;
     private final Pembeli pembeli;
+    private ExFont Xfont;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Email;
+    private javax.swing.JLabel IconKeranjang;
+    private keeptoo.KGradientPanel PanelGradient;
+    private javax.swing.JLabel Profile;
     private javax.swing.Box.Filler fillerMid2Header;
     private javax.swing.Box.Filler fillerMidHeader;
     private javax.swing.Box.Filler fillerPosHeader;
-    private javax.swing.Box.Filler fillerPreAB;
-    private javax.swing.Box.Filler fillerPreFB;
     private javax.swing.Box.Filler fillerPreHeader;
-    private javax.swing.JLabel labelABTitle;
-    private javax.swing.JLabel labelBeliBuku;
-    private javax.swing.JLabel labelEmail;
-    private javax.swing.JLabel labelFBTitle;
     private javax.swing.JLabel labelTitle;
-    private javax.swing.JLabel labelUserProfile;
     private javax.swing.JPanel panelAB;
     private javax.swing.JPanel panelABBackground;
-    private javax.swing.JPanel panelABSupport;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBody;
     private javax.swing.JPanel panelBodyBackground;
     private javax.swing.JPanel panelBodySupport;
-    private javax.swing.JPanel panelFBSupport;
-    private javax.swing.JPanel panelHeader;
     private javax.swing.JScrollPane scrollPaneMain;
     // End of variables declaration//GEN-END:variables
 }
