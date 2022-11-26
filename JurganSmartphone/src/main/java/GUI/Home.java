@@ -274,20 +274,6 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         }
     }
 
-    private String getStar(double rating) {
-        String stars = "";
-
-        for (int i = 0; i < (int) rating; i++) {
-            stars += "\uf005";
-        }
-
-        if (rating - (int) rating == 0.5) {
-            stars += "\uf089";
-        }
-
-        return stars;
-    }
-
     private void panelSPLoopMouseClicked(java.awt.event.MouseEvent evt) {
         javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
         int num = Integer.parseInt(panel.getName());

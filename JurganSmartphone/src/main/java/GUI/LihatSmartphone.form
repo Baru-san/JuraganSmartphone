@@ -3,7 +3,7 @@
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="YukBeliYuk - Lihat Buku"/>
+    <Property name="title" type="java.lang.String" value="Juragan Smartphone - Lihat smartphone"/>
     <Property name="modal" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -29,7 +29,7 @@
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="panelLB">
+    <Container class="javax.swing.JPanel" name="panelLS">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e0" green="fa" red="fe" type="rgb"/>
@@ -51,7 +51,7 @@
         <Property name="axis" type="int" value="3"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="panelLBBody1">
+        <Container class="javax.swing.JPanel" name="panelLSBody1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e0" green="fa" red="fe" type="rgb"/>
@@ -110,7 +110,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="labelLBCover">
+                    <Component class="javax.swing.JLabel" name="labelLSImg">
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -136,10 +136,10 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="panelLBRating">
+            <Component class="javax.swing.JLabel" name="panelLSRating">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ae" green="d5" red="cc" type="rgb"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="panelLSRating.setFont(konf.getAwesome(18));">
+                  <Connection code="new java.awt.Color(255, 255, 0)" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="getStar(sp.getRating())" type="code"/>
@@ -154,7 +154,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="panelLBJudul">
+            <Component class="javax.swing.JLabel" name="panelLSNama">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="String.format(&quot;&lt;html&gt;&lt;div WIDTH=%d&gt;%s&lt;/div&gt;&lt;/html&gt;&quot;, 400, sp.getNama())" type="code"/>
@@ -173,7 +173,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="panelLBPenulis">
+            <Component class="javax.swing.JLabel" name="panelLSMerek">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="&quot;&lt;html&gt;&quot; + &quot;Merek : &quot; + sp.getMerek() + &quot;&lt;/html&gt;&quot;" type="code"/>
@@ -204,7 +204,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="panelLBHarga">
+            <Component class="javax.swing.JLabel" name="panelLSHarga">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="&quot;Rp. &quot; + sp.getHarga()" type="code"/>
@@ -262,11 +262,11 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1">
-                <CodeVariable name="panelLBBody1" type="8194" declaredType="javax.swing.JPanel"/>
+              <CodeExpression id="4_panelLSBody1">
+                <CodeVariable name="panelLSBody1" type="8194" declaredType="javax.swing.JPanel"/>
                 <ExpressionOrigin>
                   <ExpressionProvider type="ComponentRef">
-                    <ComponentRef name="panelLBBody1"/>
+                    <ComponentRef name="panelLSBody1"/>
                   </ExpressionProvider>
                 </ExpressionOrigin>
               </CodeExpression>
@@ -330,7 +330,7 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
@@ -399,16 +399,16 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="14_panelLBRating">
-                  <CodeVariable name="panelLBRating" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="14_panelLSRating">
+                  <CodeVariable name="panelLSRating" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="panelLBRating"/>
+                      <ComponentRef name="panelLSRating"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -494,16 +494,16 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="21_panelLBJudul">
-                  <CodeVariable name="panelLBJudul" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="21_panelLSNama">
+                  <CodeVariable name="panelLSNama" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="panelLBJudul"/>
+                      <ComponentRef name="panelLSNama"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -563,16 +563,16 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="26_panelLBPenulis">
-                  <CodeVariable name="panelLBPenulis" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="26_panelLSMerek">
+                  <CodeVariable name="panelLSMerek" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="panelLBPenulis"/>
+                      <ComponentRef name="panelLSMerek"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -632,7 +632,7 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
@@ -701,16 +701,16 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="4_panelLBBody1"/>
+              <CodeExpression id="4_panelLSBody1"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="36_panelLBHarga">
-                  <CodeVariable name="panelLBHarga" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="36_panelLSHarga">
+                  <CodeVariable name="panelLSHarga" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="panelLBHarga"/>
+                      <ComponentRef name="panelLSHarga"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -719,7 +719,7 @@
             </CodeStatement>
           </LayoutCode>
         </Container>
-        <Container class="javax.swing.JPanel" name="panelLBBody2">
+        <Container class="javax.swing.JPanel" name="panelLSBody2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e0" green="fa" red="fe" type="rgb"/>
@@ -728,7 +728,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="scrollPaneLB">
+            <Container class="javax.swing.JScrollPane" name="scrollPaneLS">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -756,7 +756,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="textAreaLBReview">
+                <Component class="javax.swing.JTextArea" name="textAreaLSReview">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -774,7 +774,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="panelLBFooter">
+        <Container class="javax.swing.JPanel" name="panelLSFooter">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cd" green="ed" red="fa" type="rgb"/>
@@ -792,7 +792,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
-                      <Component id="buttonLBKembali" max="32767" attributes="0"/>
+                      <Component id="buttonLSKembali" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -801,14 +801,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="buttonLBKembali" max="32767" attributes="0"/>
+                      <Component id="buttonLSKembali" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="buttonLBKembali">
+            <Component class="javax.swing.JButton" name="buttonLSKembali">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="73" green="a3" red="d4" type="rgb"/>
@@ -825,7 +825,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLBKembaliActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLSKembaliActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

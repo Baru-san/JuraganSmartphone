@@ -2,6 +2,7 @@ package GUI;
 
 import Classes.Smartphone;
 import Classes.Pembeli;
+import Databases.KonfFont;
 import java.awt.FontFormatException;
 import java.awt.Image;
 import java.io.File;
@@ -19,9 +20,10 @@ public class LihatSmartphone extends javax.swing.JDialog {
         this.pembeli = pembeli;
 
         try {
+            this.konf = new KonfFont();
             this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
                     .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
-        } catch (IOException e) {
+        } catch (IOException | FontFormatException e) {
             Logger.getLogger(LihatSmartphone.class.getName()).log(Level.SEVERE, null, e);
         }
 
@@ -38,41 +40,41 @@ public class LihatSmartphone extends javax.swing.JDialog {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        panelLB = new javax.swing.JPanel();
-        panelLBBody1 = new javax.swing.JPanel();
+        panelLS = new javax.swing.JPanel();
+        panelLSBody1 = new javax.swing.JPanel();
         panelLBCover = new javax.swing.JPanel();
         panelLBCoverSupport = new javax.swing.JPanel();
-        labelLBCover = new javax.swing.JLabel();
-        panelLBRating = new javax.swing.JLabel();
-        panelLBJudul = new javax.swing.JLabel();
-        panelLBPenulis = new javax.swing.JLabel();
+        labelLSImg = new javax.swing.JLabel();
+        panelLSRating = new javax.swing.JLabel();
+        panelLSNama = new javax.swing.JLabel();
+        panelLSMerek = new javax.swing.JLabel();
         panelLBKategori = new javax.swing.JLabel();
-        panelLBHarga = new javax.swing.JLabel();
-        panelLBBody2 = new javax.swing.JPanel();
-        scrollPaneLB = new javax.swing.JScrollPane();
-        textAreaLBReview = new javax.swing.JTextArea();
-        panelLBFooter = new javax.swing.JPanel();
-        buttonLBKembali = new javax.swing.JButton();
+        panelLSHarga = new javax.swing.JLabel();
+        panelLSBody2 = new javax.swing.JPanel();
+        scrollPaneLS = new javax.swing.JScrollPane();
+        textAreaLSReview = new javax.swing.JTextArea();
+        panelLSFooter = new javax.swing.JPanel();
+        buttonLSKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("YukBeliYuk - Lihat Buku");
+        setTitle("Juragan Smartphone - Lihat smartphone");
         setModal(true);
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
-        panelLB.setBackground(new java.awt.Color(254, 250, 224));
-        panelLB.setMaximumSize(new java.awt.Dimension(600, 450));
-        panelLB.setMinimumSize(new java.awt.Dimension(600, 450));
-        panelLB.setLayout(new javax.swing.BoxLayout(panelLB, javax.swing.BoxLayout.PAGE_AXIS));
+        panelLS.setBackground(new java.awt.Color(254, 250, 224));
+        panelLS.setMaximumSize(new java.awt.Dimension(600, 450));
+        panelLS.setMinimumSize(new java.awt.Dimension(600, 450));
+        panelLS.setLayout(new javax.swing.BoxLayout(panelLS, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelLBBody1.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody1.setMaximumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setMinimumSize(new java.awt.Dimension(600, 225));
-        panelLBBody1.setPreferredSize(new java.awt.Dimension(600, 225));
+        panelLSBody1.setBackground(new java.awt.Color(254, 250, 224));
+        panelLSBody1.setMaximumSize(new java.awt.Dimension(600, 225));
+        panelLSBody1.setMinimumSize(new java.awt.Dimension(600, 225));
+        panelLSBody1.setPreferredSize(new java.awt.Dimension(600, 225));
         java.awt.GridBagLayout panelLBBody1Layout = new java.awt.GridBagLayout();
         panelLBBody1Layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0};
         panelLBBody1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
-        panelLBBody1.setLayout(panelLBBody1Layout);
+        panelLSBody1.setLayout(panelLBBody1Layout);
 
         panelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
         panelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
@@ -82,12 +84,12 @@ public class LihatSmartphone extends javax.swing.JDialog {
         panelLBCoverSupport.setMinimumSize(new java.awt.Dimension(120, 180));
         panelLBCoverSupport.setLayout(new java.awt.BorderLayout());
 
-        labelLBCover.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLBCover.setIcon(new ImageIcon(cover));
-        labelLBCover.setMaximumSize(new java.awt.Dimension(120, 180));
-        labelLBCover.setMinimumSize(new java.awt.Dimension(120, 180));
-        labelLBCover.setPreferredSize(new java.awt.Dimension(120, 180));
-        panelLBCoverSupport.add(labelLBCover, java.awt.BorderLayout.CENTER);
+        labelLSImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLSImg.setIcon(new ImageIcon(cover));
+        labelLSImg.setMaximumSize(new java.awt.Dimension(120, 180));
+        labelLSImg.setMinimumSize(new java.awt.Dimension(120, 180));
+        labelLSImg.setPreferredSize(new java.awt.Dimension(120, 180));
+        panelLBCoverSupport.add(labelLSImg, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout panelLBCoverLayout = new javax.swing.GroupLayout(panelLBCover);
         panelLBCover.setLayout(panelLBCoverLayout);
@@ -104,36 +106,37 @@ public class LihatSmartphone extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridheight = 7;
-        panelLBBody1.add(panelLBCover, gridBagConstraints);
+        panelLSBody1.add(panelLBCover, gridBagConstraints);
 
-        panelLBRating.setForeground(new java.awt.Color(204, 213, 174));
-        panelLBRating.setText(getStar(sp.getRating()));
-        panelLBRating.setPreferredSize(new java.awt.Dimension(400, 25));
+        panelLSRating.setForeground(new java.awt.Color(255, 255, 0));
+        panelLSRating.setFont(konf.getAwesome(18));
+        panelLSRating.setText(getStar(sp.getRating()));
+        panelLSRating.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBRating, gridBagConstraints);
+        panelLSBody1.add(panelLSRating, gridBagConstraints);
 
-        panelLBJudul.setText(String.format("<html><div WIDTH=%d>%s</div></html>", 400, sp.getNama()));
-        panelLBJudul.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        panelLBJudul.setMaximumSize(new java.awt.Dimension(400, 90));
-        panelLBJudul.setMinimumSize(new java.awt.Dimension(400, 30));
+        panelLSNama.setText(String.format("<html><div WIDTH=%d>%s</div></html>", 400, sp.getNama()));
+        panelLSNama.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        panelLSNama.setMaximumSize(new java.awt.Dimension(400, 90));
+        panelLSNama.setMinimumSize(new java.awt.Dimension(400, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBJudul, gridBagConstraints);
+        panelLSBody1.add(panelLSNama, gridBagConstraints);
 
-        panelLBPenulis.setText("<html>" + "Merek : " + sp.getMerek() + "</html>");
-        panelLBPenulis.setPreferredSize(new java.awt.Dimension(400, 25));
+        panelLSMerek.setText("<html>" + "Merek : " + sp.getMerek() + "</html>");
+        panelLSMerek.setPreferredSize(new java.awt.Dimension(400, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelLBBody1.add(panelLBPenulis, gridBagConstraints);
+        panelLSBody1.add(panelLSMerek, gridBagConstraints);
 
         panelLBKategori.setForeground(new java.awt.Color(128, 128, 128));
         panelLBKategori.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -142,83 +145,83 @@ public class LihatSmartphone extends javax.swing.JDialog {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        panelLBBody1.add(panelLBKategori, gridBagConstraints);
+        panelLSBody1.add(panelLBKategori, gridBagConstraints);
 
-        panelLBHarga.setText("Rp. " + sp.getHarga());
+        panelLSHarga.setText("Rp. " + sp.getHarga());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
-        panelLBBody1.add(panelLBHarga, gridBagConstraints);
+        panelLSBody1.add(panelLSHarga, gridBagConstraints);
 
-        panelLB.add(panelLBBody1);
+        panelLS.add(panelLSBody1);
 
-        panelLBBody2.setBackground(new java.awt.Color(254, 250, 224));
-        panelLBBody2.setLayout(new java.awt.GridBagLayout());
+        panelLSBody2.setBackground(new java.awt.Color(254, 250, 224));
+        panelLSBody2.setLayout(new java.awt.GridBagLayout());
 
-        scrollPaneLB.setBorder(null);
-        scrollPaneLB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        scrollPaneLB.setMaximumSize(new java.awt.Dimension(550, 150));
-        scrollPaneLB.setMinimumSize(new java.awt.Dimension(550, 120));
-        scrollPaneLB.setPreferredSize(new java.awt.Dimension(550, 150));
+        scrollPaneLS.setBorder(null);
+        scrollPaneLS.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPaneLS.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        scrollPaneLS.setMaximumSize(new java.awt.Dimension(550, 150));
+        scrollPaneLS.setMinimumSize(new java.awt.Dimension(550, 120));
+        scrollPaneLS.setPreferredSize(new java.awt.Dimension(550, 150));
 
-        textAreaLBReview.setEditable(false);
-        textAreaLBReview.setBackground(new java.awt.Color(254, 250, 224));
-        textAreaLBReview.setColumns(20);
-        textAreaLBReview.setText("No Review");
-        textAreaLBReview.setWrapStyleWord(true);
-        textAreaLBReview.setBorder(null);
-        scrollPaneLB.setViewportView(textAreaLBReview);
+        textAreaLSReview.setEditable(false);
+        textAreaLSReview.setBackground(new java.awt.Color(254, 250, 224));
+        textAreaLSReview.setColumns(20);
+        textAreaLSReview.setText("No Review");
+        textAreaLSReview.setWrapStyleWord(true);
+        textAreaLSReview.setBorder(null);
+        scrollPaneLS.setViewportView(textAreaLSReview);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        panelLBBody2.add(scrollPaneLB, gridBagConstraints);
+        panelLSBody2.add(scrollPaneLS, gridBagConstraints);
 
-        panelLB.add(panelLBBody2);
+        panelLS.add(panelLSBody2);
 
-        panelLBFooter.setBackground(new java.awt.Color(250, 237, 205));
-        panelLBFooter.setMaximumSize(new java.awt.Dimension(600, 75));
-        panelLBFooter.setMinimumSize(new java.awt.Dimension(600, 75));
+        panelLSFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelLSFooter.setMaximumSize(new java.awt.Dimension(600, 75));
+        panelLSFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
-        buttonLBKembali.setBackground(new java.awt.Color(212, 163, 115));
-        buttonLBKembali.setText("Kembali");
-        buttonLBKembali.setMaximumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setMinimumSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.setPreferredSize(new java.awt.Dimension(175, 50));
-        buttonLBKembali.addActionListener(new java.awt.event.ActionListener() {
+        buttonLSKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonLSKembali.setText("Kembali");
+        buttonLSKembali.setMaximumSize(new java.awt.Dimension(175, 50));
+        buttonLSKembali.setMinimumSize(new java.awt.Dimension(175, 50));
+        buttonLSKembali.setPreferredSize(new java.awt.Dimension(175, 50));
+        buttonLSKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLBKembaliActionPerformed(evt);
+                buttonLSKembaliActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelLBFooterLayout = new javax.swing.GroupLayout(panelLBFooter);
-        panelLBFooter.setLayout(panelLBFooterLayout);
-        panelLBFooterLayout.setHorizontalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelLSFooterLayout = new javax.swing.GroupLayout(panelLSFooter);
+        panelLSFooter.setLayout(panelLSFooterLayout);
+        panelLSFooterLayout.setHorizontalGroup(
+            panelLSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLSFooterLayout.createSequentialGroup()
                 .addGap(364, 364, 364)
-                .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonLSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(58, 58, 58))
         );
-        panelLBFooterLayout.setVerticalGroup(
-            panelLBFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLBFooterLayout.createSequentialGroup()
+        panelLSFooterLayout.setVerticalGroup(
+            panelLSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLSFooterLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(buttonLBKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonLSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(13, 13, 13))
         );
 
-        panelLB.add(panelLBFooter);
+        panelLS.add(panelLSFooter);
 
-        getContentPane().add(panelLB, java.awt.BorderLayout.CENTER);
+        getContentPane().add(panelLS, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonLBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLBKembaliActionPerformed
+    private void buttonLSKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLSKembaliActionPerformed
         dispose();
-    }//GEN-LAST:event_buttonLBKembaliActionPerformed
+    }//GEN-LAST:event_buttonLSKembaliActionPerformed
 
     private String getStar(double rating) {
         String stars = "";
@@ -241,24 +244,25 @@ public class LihatSmartphone extends javax.swing.JDialog {
     private final Smartphone sp;
     private final Pembeli pembeli;
     private final java.awt.Frame parent;
+    private KonfFont konf;
     private Image cover;
     //private Konfigurasi konfigurasi;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonLBKembali;
-    private javax.swing.JLabel labelLBCover;
-    private javax.swing.JPanel panelLB;
-    private javax.swing.JPanel panelLBBody1;
-    private javax.swing.JPanel panelLBBody2;
+    private javax.swing.JButton buttonLSKembali;
+    private javax.swing.JLabel labelLSImg;
     private javax.swing.JPanel panelLBCover;
     private javax.swing.JPanel panelLBCoverSupport;
-    private javax.swing.JPanel panelLBFooter;
-    private javax.swing.JLabel panelLBHarga;
-    private javax.swing.JLabel panelLBJudul;
     private javax.swing.JLabel panelLBKategori;
-    private javax.swing.JLabel panelLBPenulis;
-    private javax.swing.JLabel panelLBRating;
-    private javax.swing.JScrollPane scrollPaneLB;
-    private javax.swing.JTextArea textAreaLBReview;
+    private javax.swing.JPanel panelLS;
+    private javax.swing.JPanel panelLSBody1;
+    private javax.swing.JPanel panelLSBody2;
+    private javax.swing.JPanel panelLSFooter;
+    private javax.swing.JLabel panelLSHarga;
+    private javax.swing.JLabel panelLSMerek;
+    private javax.swing.JLabel panelLSNama;
+    private javax.swing.JLabel panelLSRating;
+    private javax.swing.JScrollPane scrollPaneLS;
+    private javax.swing.JTextArea textAreaLSReview;
     // End of variables declaration//GEN-END:variables
 }
