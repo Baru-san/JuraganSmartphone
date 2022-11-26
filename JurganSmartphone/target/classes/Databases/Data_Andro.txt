@@ -1,3 +1,0 @@
-an001,ROG 3,Asus,5000,4.5
-an002,iphone 11,apple,11000,4.0
-an003,galaxy 13,samsung,15000000,4.2

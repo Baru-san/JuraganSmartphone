@@ -12,9 +12,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class PreviewSmartphone extends javax.swing.JDialog {
+public class LihatSmartphone extends javax.swing.JDialog {
 
-    public PreviewSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
+    public LihatSmartphone(java.awt.Frame parent, Smartphone sp, Pembeli pembeli) {
         this.parent = parent;
         this.sp = sp;
         this.pembeli = pembeli;
@@ -24,7 +24,7 @@ public class PreviewSmartphone extends javax.swing.JDialog {
             this.cover = ImageIO.read(new File("src/main/java/Databases/" + sp.getGambar()))
                     .getScaledInstance(120, 180, Image.SCALE_AREA_AVERAGING);
         } catch (IOException e) {
-            Logger.getLogger(PreviewSmartphone.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(LihatSmartphone.class.getName()).log(Level.SEVERE, null, e);
         }
 
         initComponents();
@@ -264,6 +264,10 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         }
 
         return stars;
+    }
+    
+    public void beli(){
+        pembeli.addSmartphone(sp.getKode(), sp);
     }
 
     private final Smartphone sp;

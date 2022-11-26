@@ -178,7 +178,6 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         panelFBSupport.add(labelFBTitle);
 
         panelBodyBackground.add(panelFBSupport);
-        FB();
 
         panelABSupport.setBackground(new java.awt.Color(233, 237, 201));
         panelABSupport.setMaximumSize(new java.awt.Dimension(2147483647, 50));
@@ -222,24 +221,19 @@ public class Home extends javax.swing.JFrame implements ActionListener {
     }// </editor-fold>//GEN-END:initComponents
 
     private void labelBeliBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBeliBukuMouseClicked
-//        if (pembeli.getNama().equals("Guest")) {
-//            GuestAlert dSI = new GuestAlert(this);
-//
-//            dSI.setLocationRelativeTo(null);
-//            dSI.setVisible(true);
-//        } else {
-//            Konfirmasi KO = new Konfirmasi(pembeli);
-//            KO.setLocation(getLocation());
-//            KO.setVisible(true);
-//
-//            if (getExtendedState() == MAXIMIZED_BOTH) {
-//                KO.setExtendedState(MAXIMIZED_BOTH);
-//            } else {
-//                KO.setSize(getSize());
-//            }
-//
-//            dispose();
-//        }
+
+            Konfirmasi KO = new Konfirmasi(pembeli);
+            KO.setLocation(getLocation());
+            KO.setVisible(true);
+
+            if (getExtendedState() == MAXIMIZED_BOTH) {
+                KO.setExtendedState(MAXIMIZED_BOTH);
+            } else {
+                KO.setSize(getSize());
+            }
+
+            dispose();
+        
     }//GEN-LAST:event_labelBeliBukuMouseClicked
 
     private void labelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelUserProfileMouseClicked
@@ -271,91 +265,6 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         labelBeliBuku.setForeground(new java.awt.Color(255, 255, 255));
     }//GEN-LAST:event_labelBeliBukuMouseExited
 
-    private void FB() {
-//        panelFB = new javax.swing.JPanel[2];
-//        panelFBLoop = new javax.swing.JPanel[10];
-//        fillerFBLoop = new javax.swing.Box.Filler[10];
-//        fillerFBLoopPre = new javax.swing.Box.Filler[2];
-//        fillerFBLoopPos = new javax.swing.Box.Filler[2];
-//        labelFBLoop = new javax.swing.JLabel[10];
-//
-//        FB = new java.awt.Image[1];
-//        //int[] num = new int[1];
-////        for (int i = 0; i < 1; i++) {
-////            num[i] = (int) (Math.random() * (165 - 1) + 1);
-////            for (int j = i; j >= 0; j--) {
-////                while (num[j] == num[i] && j != i) {
-////                    num[i] = (int) (Math.random() * (165 - 1) + 1);
-////                }
-////            }
-////        }
-//
-//        for (int i = 0; i < FB.length; i++) {
-//            try {
-//                FB[i] = ImageIO.read(new File("src/main/java/database/" + sp[i].getGambar()))
-//                        .getScaledInstance(120, 180, java.awt.Image.SCALE_AREA_AVERAGING);
-//            } catch (IOException ex) {
-//                Logger.getLogger(PilihanBuku.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//
-//        for (int i = 0; i < 2; i++) {
-//            int start = 5 * i;
-//            int finish = 5 + 5 * i;
-//
-//            panelFB[i] = new javax.swing.JPanel();
-//            panelFB[i].setBackground(new java.awt.Color(254, 250, 224));
-//            panelFB[i].setMaximumSize(new java.awt.Dimension(32767, 200));
-//            panelFB[i].setMinimumSize(new java.awt.Dimension(0, 200));
-//            panelFB[i].setPreferredSize(new java.awt.Dimension(800, 200));
-//            panelFB[i].setLayout(new javax.swing.BoxLayout(panelFB[i], javax.swing.BoxLayout.LINE_AXIS));
-//
-//            fillerFBLoopPre[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-//
-//            panelFB[i].add(fillerFBLoopPre[i]);
-//            for (int j = start; j < finish; j++) {
-//                panelFBLoop[j] = new javax.swing.JPanel();
-//
-//                panelFBLoop[j].setName("" + [j]);
-//
-//                panelFBLoop[j].setMaximumSize(new java.awt.Dimension(124, 184));
-//                panelFBLoop[j].setMinimumSize(new java.awt.Dimension(124, 184));
-//                panelFBLoop[j].setPreferredSize(new java.awt.Dimension(124, 184));
-//                panelFBLoop[j].setBackground(new java.awt.Color(204, 213, 174));
-//                panelFBLoop[j].setLayout(new java.awt.BorderLayout());
-//
-//                panelFBLoop[j].addMouseListener(new java.awt.event.MouseAdapter() {
-//                    @Override
-//                    public void mouseClicked(java.awt.event.MouseEvent evt) {
-//                        panelFBLoopMouseClicked(evt);
-//                    }
-//                });
-//
-//                panelFBLoop[j].setLayout(new java.awt.BorderLayout());
-//
-//                labelFBLoop[j] = new javax.swing.JLabel();
-//                labelFBLoop[j].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-//                labelFBLoop[j].setIcon(new javax.swing.ImageIcon(FB[j]));
-//                labelFBLoop[j].setMaximumSize(new java.awt.Dimension(120, 180));
-//                labelFBLoop[j].setMinimumSize(new java.awt.Dimension(120, 180));
-//                labelFBLoop[j].setPreferredSize(new java.awt.Dimension(120, 180));
-//                panelFBLoop[j].add(labelFBLoop[j], java.awt.BorderLayout.CENTER);
-//
-//                panelFB[i].add(panelFBLoop[j]);
-//
-//                if (j < finish - 1) {
-//                    fillerFBLoop[j] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-//                    panelFB[i].add(fillerFBLoop[j]);
-//                }
-//            }
-//
-//            fillerFBLoopPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-//
-//            panelFB[i].add(fillerFBLoopPos[i]);
-//
-//            panelBodyBackground.add(panelFB[i]);
-//        }
-    }
 
     private void LB() {
         int size = 20;
@@ -406,6 +315,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
               
               buybtnLoop[i].addActionListener(this);
 
+              buybtnLoop[i].setName("" + i);
             panelLBLoop[i].setName("" + i);
 
             panelLBLoop[i].addMouseListener(new java.awt.event.MouseAdapter() {
@@ -436,14 +346,17 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         javax.swing.JPanel panel = (javax.swing.JPanel) evt.getSource();
         int num = Integer.parseInt(panel.getName());
 
-        PreviewSmartphone dLB = new PreviewSmartphone(this, sp[num], pembeli);
+        LihatSmartphone dLB = new LihatSmartphone(this, sp[num], pembeli);
         dLB.setLocationRelativeTo(null);
         dLB.setVisible(true);
     }
     
     public void actionPerformed(ActionEvent e) {
-        Pembayaran pb = new Pembayaran();
-        pb.setVisible(true);
+        javax.swing.JButton button = (javax.swing.JButton) e.getSource();
+        int num = Integer.parseInt(button.getName());
+        
+        LihatSmartphone dLB = new LihatSmartphone(this, sp[num], pembeli);
+        dLB.beli();
     }
 
 //    private void panelFBLoopMouseClicked(java.awt.event.MouseEvent evt) {
