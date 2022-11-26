@@ -1,3 +1,4 @@
 an001,ROG 3,Asus,5000,4.5,Image/ROG-3-image.jpg
 an002,iphone 11,apple,11000,4.0
 an003,galaxy 13,samsung,15000000,4.2
+an004,galaxy fold 4,samsung,Rp.40.000.000,4.5,Image/fold4.jpg

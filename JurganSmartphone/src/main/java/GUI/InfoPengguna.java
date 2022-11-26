@@ -236,7 +236,7 @@ public class InfoPengguna extends javax.swing.JFrame {
             Logger.getLogger(InfoPengguna.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        Home home = new Home();
+        Home_1 home = new Home_1();
         home.setLocation(parent.getLocation());
         home.setVisible(true);
         
