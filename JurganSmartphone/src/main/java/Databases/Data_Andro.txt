@@ -10,7 +10,7 @@ an009,Galaxy M20,Samsung,950.000,4.5,Image/galaxy m20.jpg
 an010,Iphone 13 Pro Max,Apple,18.000.000,5.0,Image/Iphone 13 Pro Max.jpg
 an011,Iphone 12 Pro Max,Apple,17.000.000,5.0,Image/iphone 12.jpg
 an012,Galaxy S22 Ultra,Samsung,17.000.000,4.8,Image/galaxy 22.jpg
-an013,Galaxy S21 Ultra,Samsung,14.000.000.4.7,Image/galaxy21.jpg
+an013,Galaxy S21 Ultra,Samsung,14.000.000,4.7,Image/galaxy21.jpg
 an014,Galaxy S20 FE,Samsung,6.000.000,4.9,Image/galaxy 20FE.jpg
 an015,Galaxy Z Flip 3,Samsung,14.000.000,4.8,Image/galaxyflip3.jpg
 an016,ROG 5s Pro,Asus,18.000.000,4.9,Image/rog 5s pro.jpg
