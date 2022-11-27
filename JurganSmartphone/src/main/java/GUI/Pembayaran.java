@@ -45,20 +45,23 @@ public class Pembayaran extends javax.swing.JDialog {
         setModal(true);
         setSize(new java.awt.Dimension(600, 450));
 
+        panelPS.setBackground(new java.awt.Color(255, 255, 255));
         panelPS.setMaximumSize(new java.awt.Dimension(600, 450));
         panelPS.setMinimumSize(new java.awt.Dimension(600, 450));
         panelPS.setPreferredSize(new java.awt.Dimension(600, 450));
         panelPS.setLayout(new javax.swing.BoxLayout(panelPS, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelPSHeader.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSHeader.setBackground(new java.awt.Color(0, 200, 255));
+        panelPSHeader.setForeground(new java.awt.Color(255, 255, 255));
         panelPSHeader.setMaximumSize(new java.awt.Dimension(2147483647, 60));
         panelPSHeader.setLayout(new java.awt.GridBagLayout());
 
+        labelSIHeader1.setForeground(new java.awt.Color(255, 255, 255));
         labelSIHeader1.setText("Konfirmasi Pembayaran");
-        labelSIHeader1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         labelSIHeader1.setMaximumSize(new java.awt.Dimension(540, 60));
         labelSIHeader1.setMinimumSize(new java.awt.Dimension(540, 60));
-        labelSIHeader1.setPreferredSize(new java.awt.Dimension(540, 60));
+        labelSIHeader1.setPreferredSize(new java.awt.Dimension(150, 60));
+        labelSIHeader1.setRequestFocusEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -68,10 +71,10 @@ public class Pembayaran extends javax.swing.JDialog {
 
         panelPS.add(panelPSHeader);
 
-        panelPSBody.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSBody.setBackground(new java.awt.Color(255, 255, 255));
         panelPSBody.setLayout(new java.awt.GridBagLayout());
 
-        panelPSEmail.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEmail.setBackground(new java.awt.Color(255, 255, 255));
         panelPSEmail.setMaximumSize(new java.awt.Dimension(600, 60));
         panelPSEmail.setMinimumSize(new java.awt.Dimension(600, 60));
         panelPSEmail.setPreferredSize(new java.awt.Dimension(600, 60));
@@ -85,7 +88,7 @@ public class Pembayaran extends javax.swing.JDialog {
         panelPSEmail.add(labelPSEmail, new java.awt.GridBagConstraints());
 
         fieldPSEmail.setEditable(false);
-        fieldPSEmail.setBackground(new java.awt.Color(254, 250, 224));
+        fieldPSEmail.setBackground(new java.awt.Color(255, 255, 255));
         fieldPSEmail.setText(pembeli.getEmail());
         fieldPSEmail.setBorder(null);
         fieldPSEmail.setMaximumSize(new java.awt.Dimension(425, 50));
@@ -97,7 +100,7 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         panelPSEmail.add(fieldPSEmail, gridBagConstraints);
 
-        panelPSEmailSupport.setBackground(fieldPSEmail.getBackground());
+        panelPSEmailSupport.setBackground(new java.awt.Color(255, 255, 255));
         panelPSEmailSupport.setMaximumSize(new java.awt.Dimension(450, 50));
         panelPSEmailSupport.setMinimumSize(new java.awt.Dimension(450, 50));
 
@@ -120,7 +123,7 @@ public class Pembayaran extends javax.swing.JDialog {
 
         panelPSBody.add(panelPSEmail, new java.awt.GridBagConstraints());
 
-        panelPSEPass.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEPass.setBackground(new java.awt.Color(255, 255, 255));
         panelPSEPass.setMaximumSize(new java.awt.Dimension(600, 60));
         panelPSEPass.setMinimumSize(new java.awt.Dimension(600, 60));
         panelPSEPass.setPreferredSize(new java.awt.Dimension(600, 60));
@@ -154,7 +157,7 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         panelPSEPass.add(fieldPSPass, gridBagConstraints);
 
-        panelPSPassSupport.setBackground(fieldPSPass.getBackground());
+        panelPSPassSupport.setBackground(new java.awt.Color(255, 255, 255));
         panelPSPassSupport.setMaximumSize(new java.awt.Dimension(450, 50));
         panelPSPassSupport.setMinimumSize(new java.awt.Dimension(450, 50));
 
@@ -180,7 +183,7 @@ public class Pembayaran extends javax.swing.JDialog {
         gridBagConstraints.gridy = 1;
         panelPSBody.add(panelPSEPass, gridBagConstraints);
 
-        panelPSEmpty.setBackground(new java.awt.Color(254, 250, 224));
+        panelPSEmpty.setBackground(new java.awt.Color(255, 255, 255));
         panelPSEmpty.setMinimumSize(new java.awt.Dimension(600, 155));
         panelPSEmpty.setPreferredSize(new java.awt.Dimension(600, 175));
         panelPSEmpty.setLayout(new java.awt.BorderLayout());
@@ -198,11 +201,13 @@ public class Pembayaran extends javax.swing.JDialog {
 
         panelPS.add(panelPSBody);
 
-        panelPSFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelPSFooter.setBackground(new java.awt.Color(255, 255, 255));
+        panelPSFooter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 200, 255)));
         panelPSFooter.setMaximumSize(new java.awt.Dimension(32767, 75));
         panelPSFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
-        buttonPSBayar.setBackground(new java.awt.Color(212, 163, 115));
+        buttonPSBayar.setBackground(new java.awt.Color(0, 200, 255));
+        buttonPSBayar.setForeground(new java.awt.Color(255, 255, 255));
         buttonPSBayar.setText("Bayar");
         buttonPSBayar.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonPSBayar.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -213,7 +218,8 @@ public class Pembayaran extends javax.swing.JDialog {
             }
         });
 
-        buttonPSKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonPSKembali.setBackground(new java.awt.Color(0, 200, 255));
+        buttonPSKembali.setForeground(new java.awt.Color(255, 255, 255));
         buttonPSKembali.setText("Kembali");
         buttonPSKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonPSKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -229,20 +235,20 @@ public class Pembayaran extends javax.swing.JDialog {
         panelPSFooterLayout.setHorizontalGroup(
             panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPSFooterLayout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(buttonPSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonPSBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(buttonPSKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
+                .addComponent(buttonPSBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         panelPSFooterLayout.setVerticalGroup(
             panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPSFooterLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(panelPSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonPSBayar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonPSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13))
+                    .addComponent(buttonPSBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonPSKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         panelPS.add(panelPSFooter);

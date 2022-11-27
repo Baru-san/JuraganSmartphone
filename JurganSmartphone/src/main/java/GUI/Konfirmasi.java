@@ -2,6 +2,7 @@ package GUI;
 
 import Classes.Pembeli;
 import Databases.Database;
+import Databases.Fonts.ExFont;
 import Databases.KonfFont;
 import java.awt.FontFormatException;
 //import java.awt.FontFormatException;
@@ -20,6 +21,7 @@ public class Konfirmasi extends javax.swing.JFrame {
 
         try {
             this.konf = new KonfFont();
+            this.Xfont = new ExFont();
         } catch (IOException | FontFormatException ex) {
             Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,15 +65,19 @@ public class Konfirmasi extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juragan Smartphone - Pembayaran");
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelHeader.setBackground(new java.awt.Color(204, 213, 174));
+        panelHeader.setBackground(new java.awt.Color(0, 200, 255));
         panelHeader.setMaximumSize(new java.awt.Dimension(32767, 60));
         panelHeader.setMinimumSize(new java.awt.Dimension(800, 60));
         panelHeader.setPreferredSize(new java.awt.Dimension(800, 60));
         panelHeader.setLayout(new javax.swing.BoxLayout(panelHeader, javax.swing.BoxLayout.LINE_AXIS));
         panelHeader.add(fillerPreHeader);
 
+        labelTitle.setFont(Xfont.getBrussels(25)
+        );
+        labelTitle.setForeground(new java.awt.Color(255, 255, 255));
         labelTitle.setText("Pembayaran");
         panelHeader.add(labelTitle);
         panelHeader.add(fillerMidHeader);
@@ -111,7 +117,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         scrollBackground.setToolTipText("");
         scrollBackground.getVerticalScrollBar().setUnitIncrement(8);
 
-        panelBackground.setBackground(new java.awt.Color(254, 250, 224));
+        panelBackground.setBackground(new java.awt.Color(255, 255, 255));
         panelBackground.setLayout(new javax.swing.BoxLayout(panelBackground, javax.swing.BoxLayout.PAGE_AXIS));
 
         listSP();
@@ -122,7 +128,8 @@ public class Konfirmasi extends javax.swing.JFrame {
 
         getContentPane().add(panelBody);
 
-        panelFooter.setBackground(new java.awt.Color(250, 237, 205));
+        panelFooter.setBackground(new java.awt.Color(255, 255, 255));
+        panelFooter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 200, 255)));
         panelFooter.setMaximumSize(new java.awt.Dimension(32767, 60));
         panelFooter.setMinimumSize(new java.awt.Dimension(800, 60));
         panelFooter.setPreferredSize(new java.awt.Dimension(800, 60));
@@ -133,7 +140,8 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelFooter.add(labelTotal);
         panelFooter.add(fillerMidFooter1);
 
-        buttonKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonKembali.setBackground(new java.awt.Color(0, 200, 255));
+        buttonKembali.setForeground(new java.awt.Color(255, 255, 255));
         buttonKembali.setText("Kembali");
         buttonKembali.setMaximumSize(new java.awt.Dimension(105, 35));
         buttonKembali.setMinimumSize(new java.awt.Dimension(105, 35));
@@ -146,7 +154,8 @@ public class Konfirmasi extends javax.swing.JFrame {
         panelFooter.add(buttonKembali);
         panelFooter.add(fillerMidFooter2);
 
-        buttonKonfirmasi.setBackground(new java.awt.Color(212, 163, 115));
+        buttonKonfirmasi.setBackground(new java.awt.Color(0, 200, 255));
+        buttonKonfirmasi.setForeground(new java.awt.Color(255, 255, 255));
         buttonKonfirmasi.setText("Konfirmasi");
         buttonKonfirmasi.setMaximumSize(new java.awt.Dimension(105, 35));
         buttonKonfirmasi.setMinimumSize(new java.awt.Dimension(105, 35));
@@ -185,7 +194,7 @@ public class Konfirmasi extends javax.swing.JFrame {
     }//GEN-LAST:event_labelLogoutMouseClicked
 
     private void labelLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoutMouseEntered
-        labelLogout.setForeground(new java.awt.Color(233, 237, 201));
+        labelLogout.setForeground(new java.awt.Color(255, 255, 255));
     }//GEN-LAST:event_labelLogoutMouseEntered
 
     private void labelLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoutMouseExited
@@ -261,7 +270,7 @@ public class Konfirmasi extends javax.swing.JFrame {
         for (String kode : pembeli.getKeySmartphone()) {
             try {
                 imageCover[i] = ImageIO.read(new File("src/main/java/Databases/" + pembeli.getSmartphone(kode).getGambar()))
-                        .getScaledInstance(60, 90, java.awt.Image.SCALE_AREA_AVERAGING);
+                        .getScaledInstance(100, 100, java.awt.Image.SCALE_AREA_AVERAGING);
             } catch (IOException ex) {
                 Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -288,16 +297,16 @@ public class Konfirmasi extends javax.swing.JFrame {
             labelSPBuang[i] = new javax.swing.JLabel();
             fillerSPPos[i] = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
 
-            panelSP[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSP[i].setBackground(new java.awt.Color(255, 255, 255));
             panelSP[i].setMaximumSize(new java.awt.Dimension(32767, 100));
             panelSP[i].setMinimumSize(new java.awt.Dimension(0, 100));
             panelSP[i].setPreferredSize(new java.awt.Dimension(800, 100));
             panelSP[i].setLayout(new javax.swing.BoxLayout(panelSP[i], javax.swing.BoxLayout.LINE_AXIS));
             panelSP[i].add(fillerSPPre[i]);
 
-            panelSPImg[i].setMaximumSize(new java.awt.Dimension(60, 90));
-            panelSPImg[i].setMinimumSize(new java.awt.Dimension(60, 90));
-            panelSPImg[i].setPreferredSize(new java.awt.Dimension(60, 90));
+            panelSPImg[i].setMaximumSize(new java.awt.Dimension(100, 100));
+            panelSPImg[i].setMinimumSize(new java.awt.Dimension(100, 100));
+            panelSPImg[i].setPreferredSize(new java.awt.Dimension(100, 100));
             panelSPImg[i].setLayout(new java.awt.BorderLayout());
 
             labelSPImg[i].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -312,7 +321,7 @@ public class Konfirmasi extends javax.swing.JFrame {
 
             panelSPDeskripsi[i].setLayout(new javax.swing.BoxLayout(panelSPDeskripsi[i], javax.swing.BoxLayout.PAGE_AXIS));
 
-            panelSPNama[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSPNama[i].setBackground(new java.awt.Color(255, 255, 255));
             panelSPNama[i].setLayout(new javax.swing.BoxLayout(panelSPNama[i], javax.swing.BoxLayout.LINE_AXIS));
 
             labelSPNama[i].setText(pembeli.getSmartphone(kode).getNama() + " by " + pembeli.getSmartphone(kode).getMerek());
@@ -334,7 +343,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             separatorDeskripsi[i].setMinimumSize(new java.awt.Dimension(0, 2));
             panelSPDeskripsi[i].add(separatorDeskripsi[i]);
 
-            panelSPHarga[i].setBackground(new java.awt.Color(254, 250, 224));
+            panelSPHarga[i].setBackground(new java.awt.Color(255, 255, 255));
             panelSPHarga[i].setLayout(new javax.swing.BoxLayout(panelSPHarga[i], javax.swing.BoxLayout.LINE_AXIS));
 
             labelSPHarga[i].setText("Rp. " + String.format("%,d", (int) pembeli.getSmartphone(kode).getHarga()).replace(',', '.'));
@@ -437,6 +446,7 @@ public class Konfirmasi extends javax.swing.JFrame {
     private Pembeli pembeli;
     private int totalHarga;
     private KonfFont konf;
+    private ExFont Xfont;
 
     // Varibles for Listed product
     private javax.swing.JPanel[] panelSP;

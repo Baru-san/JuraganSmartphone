@@ -9,11 +9,13 @@ public class ExFont {
     private final Font fOmegle;
     private final Font fBaxoe;
     private final Font Icons;
+    private final Font Brussels;
     
     public ExFont() throws IOException, FontFormatException {
         this.fOmegle = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/Databases/Fonts/OMEGLE.ttf"));
         this.fBaxoe = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/Databases/Fonts/Baxoe.ttf"));
         this.Icons = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/Databases/Fonts/Icons.ttf"));
+        this.Brussels = Font.createFont(Font.TRUETYPE_FONT, new File("src/main/java/Databases/Fonts/Brussels.otf"));
     
     }
     
@@ -27,6 +29,10 @@ public class ExFont {
     
     public Font getIcons(float size) {
         return Icons.deriveFont(size);
+    }
+    
+    public Font getBrussels(float size) {
+        return Brussels.deriveFont(size);
     }
     
 }

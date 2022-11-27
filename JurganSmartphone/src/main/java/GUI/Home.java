@@ -59,6 +59,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         logoutlabel = new javax.swing.JLabel();
         IconKeranjang = new javax.swing.JLabel();
         fillerPosHeader = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 32767));
+        jPanel2 = new javax.swing.JPanel();
         panelBody = new javax.swing.JPanel();
         scrollPaneMain = new javax.swing.JScrollPane();
         panelBackground = new javax.swing.JPanel();
@@ -66,6 +67,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         panelBodyBackground = new javax.swing.JPanel();
         panelAB = new javax.swing.JPanel();
         panelABBackground = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juragan Smartphone - Produk");
@@ -138,6 +140,9 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
         getContentPane().add(PanelGradient);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel2);
+
         panelBody.setMinimumSize(new java.awt.Dimension(822, 460));
         panelBody.setPreferredSize(new java.awt.Dimension(822, 460));
         panelBody.setLayout(new java.awt.BorderLayout());
@@ -177,6 +182,9 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         scrollPaneMain.setViewportView(panelBackground);
 
         panelBody.add(scrollPaneMain, java.awt.BorderLayout.CENTER);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
+        panelBody.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         getContentPane().add(panelBody);
 
@@ -322,6 +330,8 @@ public class Home extends javax.swing.JFrame implements ActionListener {
     private javax.swing.Box.Filler fillerMidHeader;
     private javax.swing.Box.Filler fillerPosHeader;
     private javax.swing.Box.Filler fillerPreHeader;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel logoutlabel;
     private javax.swing.JPanel panelAB;
