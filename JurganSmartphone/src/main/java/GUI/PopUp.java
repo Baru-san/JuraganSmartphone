@@ -8,12 +8,12 @@ package GUI;
  *
  * @author user
  */
-public class PopUpBeli extends javax.swing.JFrame {
+public class PopUp extends javax.swing.JFrame {
 
     /**
      * Creates new form PopUpBeli
      */
-    public PopUpBeli(int kondisi) {
+    public PopUp(int kondisi) {
 
         if (kondisi == 1){
             initComponents();

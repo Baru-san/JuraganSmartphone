@@ -12,9 +12,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-public class Konfirmasi extends javax.swing.JFrame {
+public class DaftarBelanja extends javax.swing.JFrame {
 
-    public Konfirmasi(Pembeli pembeli) {
+    public DaftarBelanja(Pembeli pembeli) {
         this.pembeli = pembeli;
         this.totalHarga = 0;
 
@@ -22,7 +22,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             this.konf = new KonfFont();
             this.Xfont = new ExFont();
         } catch (IOException | FontFormatException ex) {
-            Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DaftarBelanja.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         initComponents();
@@ -64,7 +64,6 @@ public class Konfirmasi extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Juragan Smartphone - Pembayaran");
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
 
         panelHeader.setBackground(new java.awt.Color(0, 200, 255));
@@ -201,11 +200,11 @@ public class Konfirmasi extends javax.swing.JFrame {
     }//GEN-LAST:event_labelLogoutMouseExited
 
     private void buttonKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonfirmasiActionPerformed
-        Pembayaran PB = new Pembayaran(pembeli);
-        PB.setLocationRelativeTo(null);
-        PB.setVisible(true);
+        Pembayaran PS = new Pembayaran(pembeli);
+        PS.setLocationRelativeTo(null);
+        PS.setVisible(true);
 
-        if (PB.getStatus() == true) {
+        if (PS.getStatus() == true) {
             berhasilBayar();
         }
     }//GEN-LAST:event_buttonKonfirmasiActionPerformed
@@ -219,7 +218,7 @@ public class Konfirmasi extends javax.swing.JFrame {
             try {
                 db.recordPembelian(pembeli, kode, date.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DaftarBelanja.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
 
@@ -270,7 +269,7 @@ public class Konfirmasi extends javax.swing.JFrame {
                 imageCover[i] = ImageIO.read(new File("src/main/java/Databases/" + pembeli.getSmartphone(kode).getGambar()))
                         .getScaledInstance(100, 100, java.awt.Image.SCALE_AREA_AVERAGING);
             } catch (IOException ex) {
-                Logger.getLogger(Konfirmasi.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DaftarBelanja.class.getName()).log(Level.SEVERE, null, ex);
             }
             i++;
         }
