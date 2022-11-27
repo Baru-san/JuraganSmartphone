@@ -19,3 +19,7 @@ Pada projek ini kami membuat projek tentang pembelian barang elektronik secara o
 4. Kemudian setelah itu, user akan dialihkan menuju laman login. Pada login juga terdapat kondisi untuk pengecekan apakah username ataupun password yang diinput oleh user sama pada saat registrasi tadi. Jika iya, maka user berhasil menuju home.   
 
 # Link Presentasi YouTube
+
+# cara run program
+	1. Clone repository
+	https://github.com/Baru-san/JuraganSmartphone.git
