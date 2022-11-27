@@ -151,7 +151,7 @@ public class BuatAkun extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonBuatAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBuatAkunActionPerformed
-        if (regis != null){
+
             if(regis.getNama().equals("")){
                 try {
                     createAccountAction();
@@ -159,21 +159,7 @@ public class BuatAkun extends javax.swing.JFrame {
                     Logger.getLogger(BuatAkun.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }
-        else {
-            Login log = new Login();
-            log.setLocation(parent.getLocation());
-            log.setVisible(true);
-            
-            if(parent.getExtendedState() == Frame.MAXIMIZED_BOTH) {
-                log.setExtendedState(Frame.MAXIMIZED_BOTH);
-            }
-            else {
-                log.setSize(parent.getSize());
-            }
-            parent.dispose();
-            dispose();
-        }
+        
 
     }//GEN-LAST:event_ButtonBuatAkunActionPerformed
 
@@ -196,7 +182,7 @@ public class BuatAkun extends javax.swing.JFrame {
         }
         
         int kondisi = 2;
-        PopUpBeli popbeli = new PopUpBeli(kondisi);
+        PopUp popbeli = new PopUp(kondisi);
         popbeli.setLocationRelativeTo(null);
         popbeli.setVisible(true);
         

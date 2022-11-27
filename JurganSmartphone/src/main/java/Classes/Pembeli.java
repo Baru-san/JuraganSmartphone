@@ -8,10 +8,6 @@ public class Pembeli {
     private String password;
     private HashMap<String, Smartphone> smartphone;
 
-    public Pembeli(){
-        this.nama = "guest";
-    }
-
     public Pembeli(String email, String password){
         this.nama = "";
         this.email = email;

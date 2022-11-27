@@ -11,21 +11,6 @@ import java.io.IOException;
 
 public class Home extends javax.swing.JFrame implements ActionListener {
 
-    
-    public Home() {
-        this.sp = new Smartphone[30];
-        this.pembeli = new Pembeli();
-
-        try {
-            this.Xfont = new ExFont();
-        } catch (IOException | FontFormatException ex) {}
-
-        Database db = new Database();
-        sp = db.buatObjekSmartphone();
-
-        initComponents();
-    }
-
     public Home(Pembeli pembeli) {
         this.sp = new Smartphone[30];
         this.pembeli = pembeli;
@@ -196,7 +181,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
 
     private void IconKeranjangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconKeranjangMouseClicked
 
-            Konfirmasi KO = new Konfirmasi(pembeli);
+            DaftarBelanja KO = new DaftarBelanja(pembeli);
             KO.setLocation(getLocation());
             KO.setVisible(true);
 
@@ -304,7 +289,7 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         PreviewSmartphone dPS = new PreviewSmartphone(this, sp[num], pembeli);
         dPS.beli();
         int kondisi = 1;
-        PopUpBeli popbeli = new PopUpBeli(kondisi);
+        PopUp popbeli = new PopUp(kondisi);
         popbeli.setLocationRelativeTo(null);
         popbeli.setVisible(true);
     }

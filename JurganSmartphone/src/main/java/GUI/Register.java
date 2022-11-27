@@ -254,12 +254,9 @@ public class Register extends javax.swing.JFrame {
                 confpasswordField.setText("");
             }
             else {
-//                InfoPengguna dIP = new InfoPengguna(this, pembeli);
-//                dIP.setLocationRelativeTo(null);
                 BuatAkun BA = new BuatAkun(this, pembeli);
                 BA.setLocationRelativeTo(null);
                 BA.setVisible(true);
-                //dIP.setVisible(true);
             }
         }
         else {
@@ -270,8 +267,6 @@ public class Register extends javax.swing.JFrame {
         }
     }
     
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Registerbtn;
     private javax.swing.JButton backToLoginbtn;
