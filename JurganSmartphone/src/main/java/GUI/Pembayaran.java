@@ -146,6 +146,11 @@ public class Pembayaran extends javax.swing.JDialog {
                 fieldPSPassFocusGained(evt);
             }
         });
+        fieldPSPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldPSPassActionPerformed(evt);
+            }
+        });
         fieldPSPass.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fieldPSPassKeyPressed(evt);
@@ -275,6 +280,10 @@ public class Pembayaran extends javax.swing.JDialog {
     private void fieldPSPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldPSPassFocusGained
         labelSalah.setText("");
     }//GEN-LAST:event_fieldPSPassFocusGained
+
+    private void fieldPSPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldPSPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldPSPassActionPerformed
 
     private void cekPassword() {
         String passW = String.valueOf(fieldPSPass.getPassword());

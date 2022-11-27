@@ -5,7 +5,6 @@ import Databases.Database;
 import Databases.Fonts.ExFont;
 import Databases.KonfFont;
 import java.awt.FontFormatException;
-//import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -232,7 +231,7 @@ public class Konfirmasi extends javax.swing.JFrame {
 
         for (int i = 0; i < panelSP.length; i++) {
             panelSPHarga[i].remove(labelSPBuang[i]);
-            labelSPHarga[i].setText("Lunas");
+            labelSPHarga[i].setText("Sudah dibayar");
 
             panelSPHarga[i].revalidate();
             panelSPHarga[i].repaint();

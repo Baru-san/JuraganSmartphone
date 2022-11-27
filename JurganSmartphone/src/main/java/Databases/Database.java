@@ -98,10 +98,7 @@ public class Database {
         Smartphone[] smartphone = new Smartphone[1000];
         try{
             for(int i = 0; i < 20; i++ ){
-                smartphone[i] = new Smartphone(data[i]);
-             System.out.println(smartphone[i].getNama());
-             System.out.println(smartphone[i].getHarga());
-             System.out.println(smartphone[i].getRating());
+             smartphone[i] = new Smartphone(data[i]);
             }
         }catch(IndexOutOfBoundsException exception){
         }
