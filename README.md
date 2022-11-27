@@ -21,5 +21,5 @@ Pada projek ini kami membuat projek tentang pembelian barang elektronik secara o
 # Link Presentasi YouTube
 
 # cara run program
-	1. Clone repository
+1. clone repository
 	https://github.com/Baru-san/JuraganSmartphone.git
