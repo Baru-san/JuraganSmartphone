@@ -11,12 +11,15 @@ Projek mengenai pembelian barang elektronik yang dilakukan secara online.
 
 
 # Penjelasan Projek
-Pada projek ini kami membuat projek tentang pembelian barang elektronik secara online berbasis Java GUI. Program kami memiliki 5 tampilan, yang terdiri dari Register, Login, pertaturan, data pembeli, dan yang terakhir adalah Home. Untuk tambahan, kami membuat 1 file yang berfungsi menyimpan data pembeli yang telah diisi oleh user seperti saldo. 
+Pada projek ini kami membuat projek tentang pembelian barang elektronik secara online berbasis Java GUI. Program kami memiliki beberapa tampilan, yang terdiri dari register, login, buat akun, home, preview smartphone, daftar belanja, pembayaran, dan yang terakhir adalah pop up. 
 
-1. Untuk tampilan awal, user akan diarahkan pada laman register untuk melakukan registrasi terlebih dahulu. Pada register, terdapat username dan password yang harus diisi oleh user, untuk memastikan password yang telah dibuat oleh user, kami menggunakan retype password, jdi jika user mengisi password yang berbeda, maka akan muncul perintah warning. Masing2 inputan akan disimpan dalam sebuah variabel baru.
-2. Jika berhasil, user akan diarahkan menuju laman peraturan, untuk itu user diminta untuk membaca peraturannya terlebih dahulu. Dengan menekan oke user akan dialihkan menuju data nasabah. 
-3. Pada data nasabah ini user wajib mengisi PIN serta saldo awal(minimal 100k). Kemudian data nasabah seperti saldo akan disimpan dalam sebuah file. Dengan adanya file ini, maka data nasabah tadi akan disimpan lalu akan dilakukan operasi untuk membaca dan menulis file. Pada kelas file, terdapat method getter dan setter agar kita dapat memperoleh data saldo yang terbaru. Untuk saldo, akan dilakukan casting dari string ke integer agar memudahkan dalam membuat kondisi untuk melakuka transaksi.
-4. Kemudian setelah itu, user akan dialihkan menuju laman login. Pada login juga terdapat kondisi untuk pengecekan apakah username ataupun password yang diinput oleh user sama pada saat registrasi tadi. Jika iya, maka user berhasil menuju home.   
+1. Page Login. User diminta untuk menginput email dan username, jika tidak memiliki akun akan masuk ke menu register.
+2. Page registrasi. User akan membuat akun.
+3. Page Home untuk menampilkan semua produk yang dijual.
+4. Page PreviewSmartphone akan menampilakn nama, merek, rating, dan harga dari produk.
+5. Page DaftarBelanja untuk menampilkan semua produk yang telah ditambahkan yang kemudian akan dibayar sesuai dengan harga produk.
+6. Page pembayaran. Sebelum pembayaran di finalisasi akan user akan diminta untuk memasukkan password.
+7. Page popup. Prompt yang akan memberikan informasi tambahan.
 
 # Link Presentasi YouTube
 
