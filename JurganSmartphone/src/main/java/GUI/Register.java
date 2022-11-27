@@ -203,7 +203,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldActionPerformed
 
     private void RegisterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterbtnActionPerformed
-emailField.setText(emailField.getText().toLowerCase());
+        emailField.setText(emailField.getText().toLowerCase());
         
         String email = emailField.getText().trim();
         String passW = String.valueOf(passwordField.getPassword());
@@ -254,9 +254,12 @@ emailField.setText(emailField.getText().toLowerCase());
                 confpasswordField.setText("");
             }
             else {
-                InfoPengguna dIP = new InfoPengguna(this, pembeli);
-                dIP.setLocationRelativeTo(null);
-                dIP.setVisible(true);
+//                InfoPengguna dIP = new InfoPengguna(this, pembeli);
+//                dIP.setLocationRelativeTo(null);
+                BuatAkun BA = new BuatAkun(this, pembeli);
+                BA.setLocationRelativeTo(null);
+                BA.setVisible(true);
+                //dIP.setVisible(true);
             }
         }
         else {
@@ -266,6 +269,8 @@ emailField.setText(emailField.getText().toLowerCase());
             confpasswordField.setText("");
         }
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Registerbtn;
