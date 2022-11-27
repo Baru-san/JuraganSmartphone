@@ -136,7 +136,7 @@ public class Pembayaran extends javax.swing.JDialog {
         labelPSPass.setPreferredSize(new java.awt.Dimension(100, 60));
         panelPSEPass.add(labelPSPass, new java.awt.GridBagConstraints());
 
-        fieldPSPass.setBackground(new java.awt.Color(255, 255, 254));
+        fieldPSPass.setBackground(new java.awt.Color(220,220, 220));
         fieldPSPass.setBorder(null);
         fieldPSPass.setMaximumSize(new java.awt.Dimension(425, 50));
         fieldPSPass.setMinimumSize(new java.awt.Dimension(425, 50));
