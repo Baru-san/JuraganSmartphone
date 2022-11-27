@@ -303,8 +303,8 @@ public class Home extends javax.swing.JFrame implements ActionListener {
         
         PreviewSmartphone dPS = new PreviewSmartphone(this, sp[num], pembeli);
         dPS.beli();
-        
-        PopUpBeli popbeli = new PopUpBeli();
+        int kondisi = 1;
+        PopUpBeli popbeli = new PopUpBeli(kondisi);
         popbeli.setLocationRelativeTo(null);
         popbeli.setVisible(true);
     }

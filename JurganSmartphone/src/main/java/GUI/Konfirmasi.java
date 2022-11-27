@@ -232,7 +232,6 @@ public class Konfirmasi extends javax.swing.JFrame {
         for (int i = 0; i < panelSP.length; i++) {
             panelSPHarga[i].remove(labelSPBuang[i]);
             labelSPHarga[i].setText("Sudah dibayar");
-
             panelSPHarga[i].revalidate();
             panelSPHarga[i].repaint();
         }

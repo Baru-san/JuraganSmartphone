@@ -13,8 +13,18 @@ public class PopUpBeli extends javax.swing.JFrame {
     /**
      * Creates new form PopUpBeli
      */
-    public PopUpBeli() {
-        initComponents();
+    public PopUpBeli(int kondisi) {
+
+        if (kondisi == 1){
+            initComponents();
+        }
+        else if(kondisi == 2){
+            initComponents();
+            labelKeteranganpop.setText("Akun berhasil dibuat");
+            Login lg = new Login();
+            lg.setLocationRelativeTo(null);
+            lg.setVisible(true);
+        }
     }
 
     /**
@@ -27,8 +37,8 @@ public class PopUpBeli extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        labelKeteranganpop = new javax.swing.JLabel();
+        buttonPop = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -37,18 +47,18 @@ public class PopUpBeli extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 200, 255), 2, true));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Barang berhasil ditambahkan!");
-        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
+        labelKeteranganpop.setText("Barang berhasil ditambahkan!");
+        jPanel1.add(labelKeteranganpop, java.awt.BorderLayout.CENTER);
 
-        jButton1.setBackground(new java.awt.Color(0, 200, 255));
-        jButton1.setText("OK");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonPop.setBackground(new java.awt.Color(0, 200, 255));
+        buttonPop.setText("OK");
+        buttonPop.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        buttonPop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonPopActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, java.awt.BorderLayout.PAGE_END);
+        jPanel1.add(buttonPop, java.awt.BorderLayout.PAGE_END);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -79,16 +89,16 @@ public class PopUpBeli extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPopActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonPopActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton buttonPop;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel labelKeteranganpop;
     // End of variables declaration//GEN-END:variables
 }
