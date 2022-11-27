@@ -57,10 +57,12 @@ public class PreviewSmartphone extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setModal(true);
+        setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
         panelLS.setBackground(new java.awt.Color(255, 255, 255));
+        panelLS.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 200, 255)));
         panelLS.setMaximumSize(new java.awt.Dimension(600, 450));
         panelLS.setMinimumSize(new java.awt.Dimension(600, 450));
         panelLS.setLayout(new javax.swing.BoxLayout(panelLS, javax.swing.BoxLayout.PAGE_AXIS));
@@ -74,12 +76,14 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         panelLBBody1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0};
         panelLSBody1.setLayout(panelLBBody1Layout);
 
+        panelLSCover.setBackground(new java.awt.Color(255, 255, 255));
         panelLSCover.setMaximumSize(new java.awt.Dimension(120, 180));
         panelLSCover.setMinimumSize(new java.awt.Dimension(120, 180));
-        panelLSCover.setPreferredSize(new java.awt.Dimension(120, 180));
+        panelLSCover.setPreferredSize(new java.awt.Dimension(100, 100));
 
         panelLSCoverSupport.setMaximumSize(new java.awt.Dimension(120, 180));
         panelLSCoverSupport.setMinimumSize(new java.awt.Dimension(120, 180));
+        panelLSCoverSupport.setPreferredSize(new java.awt.Dimension(100, 100));
         panelLSCoverSupport.setLayout(new java.awt.BorderLayout());
 
         labelLBCover.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,11 +98,15 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         panelLSCover.setLayout(panelLSCoverLayout);
         panelLSCoverLayout.setHorizontalGroup(
             panelLSCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelLSCoverSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelLSCoverLayout.createSequentialGroup()
+                .addComponent(panelLSCoverSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         panelLSCoverLayout.setVerticalGroup(
             panelLSCoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelLSCoverSupport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelLSCoverLayout.createSequentialGroup()
+                .addComponent(panelLSCoverSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 80, Short.MAX_VALUE))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -174,7 +182,8 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         panelLSFooter.setMaximumSize(new java.awt.Dimension(600, 75));
         panelLSFooter.setMinimumSize(new java.awt.Dimension(600, 75));
 
-        buttonLSKembali.setBackground(new java.awt.Color(212, 163, 115));
+        buttonLSKembali.setBackground(new java.awt.Color(0, 200, 255));
+        buttonLSKembali.setForeground(new java.awt.Color(255, 255, 255));
         buttonLSKembali.setText("Kembali");
         buttonLSKembali.setMaximumSize(new java.awt.Dimension(175, 50));
         buttonLSKembali.setMinimumSize(new java.awt.Dimension(175, 50));
@@ -190,16 +199,16 @@ public class PreviewSmartphone extends javax.swing.JDialog {
         panelLSFooterLayout.setHorizontalGroup(
             panelLSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLSFooterLayout.createSequentialGroup()
-                .addGap(371, 371, 371)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(buttonLSKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(416, Short.MAX_VALUE))
         );
         panelLSFooterLayout.setVerticalGroup(
             panelLSFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLSFooterLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addGap(14, 14, 14)
                 .addComponent(buttonLSKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(13, 13, 13))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         panelLS.add(panelLSFooter);

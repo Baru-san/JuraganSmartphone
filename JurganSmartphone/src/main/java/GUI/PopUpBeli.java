@@ -32,13 +32,17 @@ public class PopUpBeli extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 200, 255), 2, true));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("barang berhasil ditambahkan");
+        jLabel1.setText("Barang berhasil ditambahkan!");
         jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 
+        jButton1.setBackground(new java.awt.Color(0, 200, 255));
         jButton1.setText("OK");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -54,7 +58,7 @@ public class PopUpBeli extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 98, Short.MAX_VALUE)
+            .addGap(0, 99, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.LINE_START);
