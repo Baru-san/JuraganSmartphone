@@ -22,6 +22,7 @@ Pada projek ini kami membuat projek tentang pembelian barang elektronik secara o
 7. Page popup. Prompt yang akan memberikan informasi tambahan.
 
 # Link Presentasi YouTube
+https://youtu.be/t1P37zDe_9o
 
 # Cara Run Program
 	1. clone repository
