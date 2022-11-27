@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.netbeans.external</groupId>
+  <artifactId>KGradientPanel1</artifactId>
+  <versioning>
+    <lastUpdated>20221127102014</lastUpdated>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>SNAPSHOT</value>
+        <updated>20221127102014</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>SNAPSHOT</value>
+        <updated>20221127102014</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>SNAPSHOT</version>
+</metadata>
